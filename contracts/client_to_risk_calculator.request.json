@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://risk-calculator.local/contracts/client_to_risk_calculator.request.json",
+  "title": "RiskCalculatorRequest",
+  "description": "Request body for POST /api/risk. Sent by a client (CLI or other service) to the risk_calculator service.",
+  "type": "object",
+  "required": ["ticker"],
+  "additionalProperties": false,
+  "properties": {
+    "ticker": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9.\\-]{0,9}$",
+      "description": "Uppercase stock ticker symbol (e.g. MSFT)."
+    },
+    "company_name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-readable company name, forwarded to sentiment_analysis. Defaults to ticker if omitted."
+    },
+    "lookback_days": {
+      "type": "integer",
+      "minimum": 60,
+      "maximum": 3650,
+      "default": 504,
+      "description": "Number of calendar days of historical daily price data to fetch."
+    },
+    "benchmark": {
+      "type": "string",
+      "default": "SPY",
+      "description": "Benchmark ticker for beta and relative-risk calculations."
+    },
+    "weights": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "market": { "type": "number", "minimum": 0, "maximum": 1 },
+        "sentiment": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "description": "Composite-score weights; should sum to ~1. Defaults to {market: 0.7, sentiment: 0.3}."
+    },
+    "account_size": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "description": "Optional account size in USD for position-sizing recommendation."
+    },
+    "max_risk_pct": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Max % of account to risk on this position (for stop-loss-based sizing)."
+    },
+    "sentiment_api_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Override sentiment_analysis base URL (else SENTIMENT_API_URL env or http://localhost:8000)."
+    }
+  },
+  "examples": [
+    {
+      "ticker": "MSFT",
+      "company_name": "Microsoft Corporation",
+      "lookback_days": 504,
+      "benchmark": "SPY",
+      "weights": { "market": 0.7, "sentiment": 0.3 },
+      "account_size": 10000,
+      "max_risk_pct": 1.0
+    }
+  ]
+}

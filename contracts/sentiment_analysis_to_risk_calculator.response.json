@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://risk-calculator.local/contracts/sentiment_analysis_to_risk_calculator.response.json",
+  "title": "SentimentAnalyzeResponse",
+  "description": "Response returned by sentiment_analysis POST /api/analyze. Mirrors the structure of sentiment_analysis/msft_result.json.",
+  "type": "object",
+  "required": [
+    "ticker",
+    "company_name",
+    "overall_sentiment",
+    "confidence",
+    "metrics",
+    "articles"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "ticker": { "type": "string" },
+    "company_name": { "type": "string" },
+    "overall_sentiment": {
+      "type": "string",
+      "enum": ["positive", "neutral", "negative"]
+    },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "total_articles",
+        "positive_count",
+        "negative_count",
+        "neutral_count",
+        "avg_sentiment"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "total_articles": { "type": "integer", "minimum": 0 },
+        "positive_count": { "type": "integer", "minimum": 0 },
+        "negative_count": { "type": "integer", "minimum": 0 },
+        "neutral_count": { "type": "integer", "minimum": 0 },
+        "avg_sentiment": { "type": "number" },
+        "sources_breakdown": {
+          "type": "object",
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "articles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "source", "published_at", "sentiment", "score"],
+        "additionalProperties": true,
+        "properties": {
+          "title": { "type": "string" },
+          "source": { "type": "string" },
+          "published_at": { "type": "string", "description": "ISO 8601 timestamp." },
+          "sentiment": { "type": "string", "enum": ["positive", "neutral", "negative"] },
+          "score": { "type": "number", "minimum": -1, "maximum": 1 },
+          "url": { "type": ["string", "null"] },
+          "summary": { "type": ["string", "null"] },
+          "description": { "type": ["string", "null"] },
+          "impact_score": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+        }
+      }
+    },
+    "topics": {
+      "type": "array",
+      "description": "Top keywords/topics extracted from articles, with occurrence count and average sentiment.",
+      "items": {
+        "type": "object",
+        "required": ["keyword", "count", "avg_sentiment"],
+        "properties": {
+          "keyword":       { "type": "string" },
+          "count":         { "type": "integer", "minimum": 1 },
+          "avg_sentiment": { "type": "number", "minimum": -1, "maximum": 1 }
+        }
+      }
+    },
+    "analyst_ratings": {
+      "type": "object",
+      "description": "Analyst consensus and price targets from Yahoo Finance.",
+      "additionalProperties": true,
+      "properties": {
+        "recommendation":   { "type": "string" },
+        "target_mean_price":{ "type": ["number", "null"] },
+        "target_high_price":{ "type": ["number", "null"] },
+        "target_low_price": { "type": ["number", "null"] },
+        "num_analysts":     { "type": "integer", "minimum": 0 },
+        "strong_buy":       { "type": "integer", "minimum": 0 },
+        "buy":              { "type": "integer", "minimum": 0 },
+        "hold":             { "type": "integer", "minimum": 0 },
+        "sell":             { "type": "integer", "minimum": 0 },
+        "strong_sell":      { "type": "integer", "minimum": 0 }
+      }
+    },
+    "correlation": {
+      "type": "object",
+      "description": "Price–sentiment correlation metrics (Pearson r, lead/lag, divergence).",
+      "additionalProperties": true,
+      "properties": {
+        "pearson_r":          { "type": ["number", "null"], "minimum": -1, "maximum": 1 },
+        "divergence_alert":   { "type": "boolean" },
+        "divergence_direction": { "type": ["string", "null"] },
+        "lead_lag": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["offset_days", "correlation"],
+            "properties": {
+              "offset_days": { "type": "integer", "minimum": 1 },
+              "correlation": { "type": "number", "minimum": -1, "maximum": 1 }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "ticker": "DELL",
+  "as_of": "2026-04-22",
+  "composite_risk_score": 51.86,
+  "risk_bucket": "moderate",
+  "market_risk": {
+    "index": 61.7,
+    "metrics": {
+      "vol_ann_30d": 0.5681762365675975,
+      "vol_ann_90d": 0.6098747058744789,
+      "vol_ann_1y": 0.4957773418097512,
+      "downside_deviation_ann": 0.39585261059658383,
+      "var_95_hist_1d": -0.04923737856387404,
+      "var_99_hist_1d": -0.08976785526594179,
+      "var_95_param_1d": -0.05454959184332503,
+      "var_99_param_1d": -0.07781088839049742,
+      "cvar_95_1d": -0.07652118948783775,
+      "max_drawdown": -0.42968373396486537,
+      "max_drawdown_duration_days": 137,
+      "beta": 1.7422187067213002,
+      "sharpe": 0.6749182440194508,
+      "sortino": 0.9238248683566566,
+      "skew": -0.12407768848060616,
+      "excess_kurtosis": 7.815859473594298,
+      "atr14_pct": 0.04215059602103162,
+      "gap_risk_freq": 0.05539358600583091,
+      "liquidity_score": 91.15788430473071,
+      "range_52w_position": 1.0
+    }
+  },
+  "sentiment_risk": {
+    "index": 28.9,
+    "metrics": {
+      "negative_ratio": 0.046511627906976744,
+      "dispersion": 0.4837874454332232,
+      "momentum_24h_vs_7d": 0.05156666666666665,
+      "recency_weighted_sentiment": 0.3097790529867787,
+      "news_volume_zscore": 1.2156766582095675,
+      "source_concentration_hhi": 0.5987020010816657,
+      "confidence": 0.84,
+      "extreme_score_share": 0.3023255813953488,
+      "polarity_gap": 0.3953488372093023,
+      "sentiment_vol_proxy": 0.5881291049480043
+    }
+  },
+  "recommendations": {
+    "suggested_stop_loss_pct": -0.08430119204206324,
+    "kelly_fraction_capped": 0.25,
+    "position_size_pct_of_account": 11.86222846648522,
+    "position_size_usd": 1186.2228466485221
+  },
+  "warnings": [
+    "Severe historical drawdown (-43%).",
+    "Fat-tailed return distribution (excess kurtosis > 5); VaR may understate risk."
+  ],
+  "meta": {
+    "sentiment_fetched_at": "2026-04-22T20:20:34.018815+00:00",
+    "price_data_as_of": "2026-04-21",
+    "benchmark": "SPY",
+    "lookback_days": 504,
+    "weights": {
+      "market": 0.7,
+      "sentiment": 0.3
+    }
+  }
+}

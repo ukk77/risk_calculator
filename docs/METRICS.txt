@@ -1,0 +1,471 @@
+================================================================================
+RISK CALCULATOR - METRIC DICTIONARY
+================================================================================
+
+Every metric below is computed by the risk_calculator service and appears in the
+JSON response defined by contracts/risk_calculator_to_client.response.json.
+
+Each entry follows this template:
+  NAME, GROUP, DEFINITION, FORMULA, INPUTS, RANGE/UNITS, NORMALIZATION
+  (how the raw value is mapped to a 0-100 risk contribution), TRADING USE,
+  CAVEATS.
+
+Higher 0-100 risk contribution always means MORE risky. The market_risk.index
+and sentiment_risk.index are simple means of their group's contributions; the
+composite_risk_score is a weighted combination (default 70% market, 30% sentiment).
+
+================================================================================
+MARKET METRICS
+================================================================================
+
+--------------------------------------------------------------------------------
+NAME:        vol_ann_30d / vol_ann_90d / vol_ann_1y (Annualized Volatility)
+GROUP:       market
+DEFINITION:  Standard deviation of daily log returns scaled to a one-year
+             horizon. Measures how wide the typical price swing is.
+FORMULA:     sigma_ann = stdev(log_returns_window) * sqrt(252)
+INPUTS:      Daily close prices over the window.
+RANGE/UNITS: Fraction (e.g. 0.25 = 25% annualized).
+NORMALIZATION: Linear from 10% (score 0) to 60% (score 100) on 1y volatility.
+TRADING USE: Base input for position sizing: keep dollar-volatility per trade
+             constant across names (target_position = risk_budget / sigma_ann).
+             Rising short-term vol (30d) vs long-term (1y) signals regime change;
+             tighten stops, shrink size. Compare vs implied vol (options) to spot
+             over-/under-pricing of risk.
+CAVEATS:     Backward-looking; earnings weeks inflate readings. Log-return stdev
+             assumes approximate stationarity.
+
+--------------------------------------------------------------------------------
+NAME:        downside_deviation_ann
+GROUP:       market
+DEFINITION:  Annualized stdev of returns BELOW a minimum acceptable return
+             (default MAR = 0). Penalizes only the bad side of the distribution.
+FORMULA:     sqrt(252) * stdev({r : r < MAR})
+INPUTS:      Daily log returns.
+RANGE/UNITS: Fraction.
+NORMALIZATION: Linear 8% -> 0, 50% -> 100.
+TRADING USE: Preferred over plain vol when you care about losses (all directional
+             strategies). Size long positions inversely to downside deviation,
+             not total vol, to avoid penalizing upside-heavy names.
+CAVEATS:     Needs enough below-MAR samples (>=30) to be stable.
+
+--------------------------------------------------------------------------------
+NAME:        var_95_hist_1d / var_99_hist_1d
+GROUP:       market
+DEFINITION:  Historical Value-at-Risk: the empirical 5%/1% quantile of daily
+             log returns. "With 95% confidence we will not lose more than |VaR|
+             in one day, assuming the past repeats."
+FORMULA:     quantile(returns, 1 - alpha)  (negative number, a loss)
+INPUTS:      Full lookback of daily log returns.
+RANGE/UNITS: Fraction (negative).
+NORMALIZATION: score(-VaR95, 1%, 6%); i.e. -1% -> 0, -6% -> 100.
+TRADING USE: Per-trade risk budget. For a $10k account with 1% max daily risk,
+             only hold position_usd such that position_usd * |VaR95| <= $100.
+             Monitor VaR breaches: if realized loss exceeds VaR99 more than 2%
+             of days, your model is underestimating tail risk -> de-risk.
+CAVEATS:     Historical VaR says nothing about how bad the loss gets beyond the
+             quantile (use CVaR). Ignores autocorrelation and vol clustering.
+
+--------------------------------------------------------------------------------
+NAME:        var_95_param_1d / var_99_param_1d (Parametric / Normal VaR)
+GROUP:       market
+DEFINITION:  VaR under a normal-distribution assumption: mu + sigma * z_alpha.
+FORMULA:     mean(returns) + stdev(returns) * NormInv(1 - alpha)
+INPUTS:      Daily log returns.
+RANGE/UNITS: Fraction (negative).
+NORMALIZATION: Shown in the report but not folded into the composite (historical
+             and CVaR are used instead to avoid double-counting).
+TRADING USE: Sanity-check vs historical VaR. When parametric VaR is materially
+             less negative than historical VaR, returns are fat-tailed -> rely on
+             historical VaR and widen stops.
+CAVEATS:     Assumes normality, which equity returns routinely violate.
+
+--------------------------------------------------------------------------------
+NAME:        cvar_95_1d (Conditional VaR / Expected Shortfall)
+GROUP:       market
+DEFINITION:  Average loss on days worse than the 95% VaR threshold. "If today
+             is a bad-5% day, expect to lose about CVaR."
+FORMULA:     mean({r : r <= quantile(r, 0.05)})
+INPUTS:      Daily log returns.
+RANGE/UNITS: Fraction (negative).
+NORMALIZATION: score(-CVaR, 2%, 8%).
+TRADING USE: Primary capital-at-risk input for institutional sizing: CVaR-based
+             Kelly or risk parity. For retail: use |CVaR95| to set a "catastrophic
+             day" scenario and stress-test your portfolio's simultaneous loss.
+CAVEATS:     Tail sample is small by definition; confidence bands are wide.
+
+--------------------------------------------------------------------------------
+NAME:        max_drawdown + max_drawdown_duration_days
+GROUP:       market
+DEFINITION:  Largest peak-to-trough decline in the lookback and the longest
+             stretch the price spent below a running peak.
+FORMULA:     min(price / cummax(price) - 1);  longest run where price < cummax.
+INPUTS:      Daily close prices.
+RANGE/UNITS: Fraction (negative) and integer days.
+NORMALIZATION: score(-mdd, 10%, 60%).
+TRADING USE: Sets realistic expectations for how bad a long-only position gets.
+             Backtest rule of thumb: expect a forward drawdown >= historical
+             MDD. If MDD duration > 1 year, avoid concentrated holdings or hedge
+             with puts / trailing stops.
+CAVEATS:     Path-dependent; a single crash dominates. Use with vol for context.
+
+--------------------------------------------------------------------------------
+NAME:        beta
+GROUP:       market
+DEFINITION:  Sensitivity of asset returns to the benchmark (default SPY).
+             Beta of 1.2 means ~1.2% asset move per 1% SPY move.
+FORMULA:     cov(r_asset, r_bench) / var(r_bench)
+INPUTS:      Aligned daily log returns of asset and benchmark.
+RANGE/UNITS: Unitless.
+NORMALIZATION: score(|beta|, 0.5, 2.0).
+TRADING USE: Hedge sizing: short SPY notionally = beta * position_usd to neutral-
+             ize market risk. Portfolio construction: combine low/high-beta
+             names to target a desired portfolio beta (e.g. 0.5 for defensive).
+             High beta (>1.5) amplifies market moves - be smaller on open risk
+             before known market events (CPI, FOMC).
+CAVEATS:     Beta is not stable; re-estimate at least monthly. A single sector
+             can drift the benchmark.
+
+--------------------------------------------------------------------------------
+NAME:        sharpe
+GROUP:       market
+DEFINITION:  Annualized risk-adjusted return using total volatility as the risk
+             denominator.
+FORMULA:     (mean(r - rf_daily) / stdev(r - rf_daily)) * sqrt(252)
+INPUTS:      Daily log returns, risk-free rate (^IRX proxy).
+RANGE/UNITS: Unitless; >1 good, >2 exceptional, <0 bad.
+NORMALIZATION: Inverted: score(-sharpe, -1.5, 1.0) -> high Sharpe -> low risk.
+TRADING USE: Filter candidates - only trade names with rolling 1y Sharpe above
+             your threshold. Weight portfolio by Sharpe (max-Sharpe / Kelly)
+             rather than market-cap.
+CAVEATS:     Penalizes upside vol. Past Sharpe is a weak predictor of future
+             Sharpe for single names - more reliable at portfolio level.
+
+--------------------------------------------------------------------------------
+NAME:        sortino
+GROUP:       market
+DEFINITION:  Like Sharpe but uses downside deviation instead of total stdev.
+FORMULA:     (mean(r - rf_daily) / downside_stdev(r - rf_daily)) * sqrt(252)
+INPUTS:      Daily log returns, risk-free rate.
+RANGE/UNITS: Unitless.
+NORMALIZATION: Not folded into composite (Sharpe proxies it); shown in report.
+TRADING USE: Better screen for directional long strategies. Compare Sortino -
+             Sharpe: a large positive gap means upside-heavy return profile
+             (good for call-buyers and momentum), small/negative gap means
+             symmetric or left-skewed returns (avoid naked-long exposure).
+CAVEATS:     Needs enough downside samples.
+
+--------------------------------------------------------------------------------
+NAME:        skew
+GROUP:       market
+DEFINITION:  Third standardized moment of returns. Negative = left-tailed
+             (more large losses than large gains), positive = right-tailed.
+FORMULA:     scipy.stats.skew(returns, bias=False)
+INPUTS:      Daily log returns.
+RANGE/UNITS: Typical -2 .. 2.
+NORMALIZATION: score(-skew, -0.5, 1.5).
+TRADING USE: Strongly negative skew (< -1) warns of crash risk - either hedge
+             with OTM puts or cut size. Positive-skew names suit convex
+             strategies (long premium, trend-following).
+CAVEATS:     Sensitive to outliers; one crash day can flip the sign.
+
+--------------------------------------------------------------------------------
+NAME:        excess_kurtosis
+GROUP:       market
+DEFINITION:  Fourth standardized moment minus 3. Measures tail fatness vs
+             normal. >0 = fat tails, extreme moves more common than normal.
+FORMULA:     scipy.stats.kurtosis(returns, fisher=True, bias=False)
+INPUTS:      Daily log returns.
+RANGE/UNITS: Typical 0 .. 10; equities often 3-6.
+NORMALIZATION: score(k, 0, 6).
+TRADING USE: High kurtosis means VaR/stdev underestimate risk - demand wider
+             stops and size down. Useful filter against strategies that short
+             vol or sell premium on single names.
+CAVEATS:     Very sensitive to outliers; use together with MDD and skew.
+
+--------------------------------------------------------------------------------
+NAME:        atr14_pct (Average True Range, 14-period, % of price)
+GROUP:       market
+DEFINITION:  Average of max(high-low, |high-prev_close|, |low-prev_close|)
+             over 14 sessions, divided by the last close.
+FORMULA:     mean_14(TR) / last_close
+INPUTS:      Daily OHLC.
+RANGE/UNITS: Fraction.
+NORMALIZATION: score(atr, 1%, 6%).
+TRADING USE: Primary input for stop placement: stop = entry - k * ATR (k=2 for
+             swing trades, 3 for trend trades, 1-1.5 for intraday). Position
+             size = risk_$ / (k * ATR). Rising ATR without price direction =
+             breakout potential; falling ATR = compression -> expect expansion.
+CAVEATS:     Doesn't care about direction. Gap-heavy names may need to be
+             scaled with a different denominator.
+
+--------------------------------------------------------------------------------
+NAME:        gap_risk_freq
+GROUP:       market
+DEFINITION:  Fraction of overnight open-vs-prior-close gaps whose magnitude
+             exceeds 2 standard deviations of the gap distribution.
+FORMULA:     mean(|gap| > 2 * stdev(gap)), gap = (open - prev_close) / prev_close
+INPUTS:      Daily OHLC.
+RANGE/UNITS: Fraction (0-1).
+NORMALIZATION: score(freq, 2%, 15%).
+TRADING USE: High gap risk = stops on the chart will not protect you; reduce
+             size or use options for defined risk. For short-sellers, high gap
+             risk is a killer - prefer names with freq < 5%.
+CAVEATS:     Earnings and news events inflate readings; consider segregating
+             earnings-day gaps.
+
+--------------------------------------------------------------------------------
+NAME:        liquidity_score
+GROUP:       market
+DEFINITION:  0-100 score based on 60-day average dollar volume with a penalty
+             for zero-volume days.
+FORMULA:     clip(10 * log10(avg_dollar_vol), 0, 100) * (1 - zero_volume_share)
+INPUTS:      Close prices and share volume.
+RANGE/UNITS: 0-100 (higher = more liquid).
+NORMALIZATION: Inverted: contribution = 100 - liquidity_score.
+TRADING USE: Position size cap: avoid being more than 1-5% of ADV (1% for
+             discretionary, 5% for tiny accounts). Low-liquidity names have
+             wide slippage - factor 0.5-1% round-trip cost into expected edge.
+CAVEATS:     Uses share volume; ADRs, OTC, and some ETFs may be mis-ranked.
+
+--------------------------------------------------------------------------------
+NAME:        range_52w_position
+GROUP:       market
+DEFINITION:  Where the current close sits inside the trailing 252-day range.
+             0 = at 52w low, 1 = at 52w high.
+FORMULA:     (last_close - min_252) / (max_252 - min_252)
+INPUTS:      Daily close prices.
+RANGE/UNITS: 0-1.
+NORMALIZATION: Not folded into composite; shown as context.
+TRADING USE: >0.9 = buying into an extended uptrend (momentum favored but
+             pullback-entry reduces risk); <0.1 = deep drawdown (mean-reversion
+             setup but may be in a downtrend). Combine with sentiment momentum
+             for confirmation.
+CAVEATS:     Pure technical; says nothing about fundamentals.
+
+================================================================================
+SENTIMENT METRICS
+================================================================================
+
+--------------------------------------------------------------------------------
+NAME:        negative_ratio
+GROUP:       sentiment
+DEFINITION:  Share of articles classified as negative by the upstream FinBERT
+             model.
+FORMULA:     negative_count / total_articles
+INPUTS:      sentiment_analysis response metrics.
+RANGE/UNITS: 0-1.
+NORMALIZATION: score(ratio, 0.10, 0.50).
+TRADING USE: Above 0.30 on a long position = exit or hedge unless you have a
+             contrarian thesis backed by price action. Below 0.10 with rising
+             price = momentum continuation. Use as a veto filter: do not add
+             to longs when negative_ratio > sector median.
+CAVEATS:     Doesn't weigh article importance; a single bombshell equals a
+             routine analyst note.
+
+--------------------------------------------------------------------------------
+NAME:        dispersion
+GROUP:       sentiment
+DEFINITION:  Standard deviation of per-article sentiment scores. Proxy for
+             disagreement among news sources.
+FORMULA:     stdev({article.score})
+INPUTS:      All articles in the response.
+RANGE/UNITS: 0 - ~1.
+NORMALIZATION: score(disp, 0.20, 0.70).
+TRADING USE: High dispersion (>0.5) = narrative uncertainty -> wider stops,
+             smaller size, expect higher realized vol. Combine with news_volume
+             z-score: high volume + high dispersion = event risk imminent,
+             often a gap-risk precursor.
+CAVEATS:     Requires >= 3 articles; noisy on thinly-covered tickers.
+
+--------------------------------------------------------------------------------
+NAME:        momentum_24h_vs_7d
+GROUP:       sentiment
+DEFINITION:  Mean score of articles in the last 24h minus mean score of the
+             prior 6 days. Captures narrative shifts.
+FORMULA:     mean(score | age <= 24h) - mean(score | 24h < age <= 7d)
+INPUTS:      Article scores + timestamps.
+RANGE/UNITS: Approx -1 to 1.
+NORMALIZATION: score(-momentum, -0.3, 0.6)  (negative shift = risky).
+TRADING USE: Positive flip crossing zero + rising news volume = continuation
+             cue for longs; negative flip with confidence > 0.7 = trigger to
+             trim longs or initiate hedges. Ignore flips when total_articles
+             < 20 (signal is unreliable).
+CAVEATS:     Depends on accurate timestamps; older articles with re-dates can
+             distort.
+
+--------------------------------------------------------------------------------
+NAME:        recency_weighted_sentiment
+GROUP:       sentiment
+DEFINITION:  Exponentially-weighted mean score, half-life 48 hours. Emphasizes
+             recent narrative without completely ignoring the baseline.
+FORMULA:     sum(w_i * score_i) / sum(w_i), w_i = exp(-ln(2) * hours_i / 48)
+INPUTS:      Article scores + timestamps.
+RANGE/UNITS: -1 to 1.
+NORMALIZATION: score(-value, -0.3, 0.6).
+TRADING USE: Smoother alternative to momentum for swing/position trades;
+             crosses through zero act like a moving-average crossover on news.
+             Combine with price momentum - divergence (price up, sentiment
+             down) is a classic distribution signal.
+CAVEATS:     Half-life is a hyperparameter; intraday traders should shorten.
+
+--------------------------------------------------------------------------------
+NAME:        news_volume_zscore
+GROUP:       sentiment
+DEFINITION:  Z-score of today's article count vs the prior 7-day mean/stdev.
+FORMULA:     (count_today - mean(count_{1..7})) / stdev(count_{1..7})
+INPUTS:      Article timestamps (day buckets).
+RANGE/UNITS: Unbounded (typically -3 to +3+).
+NORMALIZATION: score(|z|, 0.5, 3.0).
+TRADING USE: z > 2 = news storm - widen stops, cut size, expect realized vol
+             to spike. For event-driven strategies, z > 2 combined with
+             negative_ratio > 0.4 is a common short-term short setup.
+             Conversely z < -1 (silence) followed by a sudden jump often
+             precedes gap moves.
+CAVEATS:     Weekend/holiday zero-volume days skew baseline; only 7 samples.
+
+--------------------------------------------------------------------------------
+NAME:        source_concentration_hhi
+GROUP:       sentiment
+DEFINITION:  Herfindahl-Hirschman Index across sources_breakdown. 0 = uniform,
+             1 = single source.
+FORMULA:     sum(share_i^2)
+INPUTS:      metrics.sources_breakdown.
+RANGE/UNITS: 0-1.
+NORMALIZATION: score(hhi, 0.25, 0.85).
+TRADING USE: HHI > 0.6 = fragile signal - wait for confirmation from price or
+             a second independent source before acting. A collapse in HHI (news
+             blackout followed by a single-source burst) is often a leak
+             precursor - tighten risk into the next session.
+CAVEATS:     Source labeling comes from upstream; aggregator sources (Yahoo
+             Finance) inflate one bucket.
+
+--------------------------------------------------------------------------------
+NAME:        confidence
+GROUP:       sentiment
+DEFINITION:  Upstream FinBERT overall confidence score for the aggregate
+             classification.
+FORMULA:     Provided by sentiment_analysis (1 - entropy-like measure).
+INPUTS:      sentiment_analysis response.
+RANGE/UNITS: 0-1.
+NORMALIZATION: Inverted: score(1 - confidence, 0.10, 0.60).
+TRADING USE: Treat confidence as a signal-weight multiplier. Reduce sentiment
+             weight in the composite (or in your trade sizing) linearly with
+             (1 - confidence). Below 0.5 confidence: ignore the direction
+             entirely and fall back to market metrics.
+CAVEATS:     Calibration of the upstream model matters; monitor forward-return
+             hit rate by confidence bucket.
+
+--------------------------------------------------------------------------------
+NAME:        extreme_score_share
+GROUP:       sentiment
+DEFINITION:  Share of articles with |score| > 0.8. Measures polarization of
+             coverage.
+FORMULA:     count(|score| > 0.8) / total_articles
+INPUTS:      Article scores.
+RANGE/UNITS: 0-1.
+NORMALIZATION: score(share, 0.15, 0.60).
+TRADING USE: High extreme share + low polarity gap = loud noise in both
+             directions, often a volatility catalyst. High extreme share + high
+             polarity gap = conviction event, align trade with the dominant
+             sign.
+CAVEATS:     Model-dependent threshold; 0.8 is chosen for FinBERT.
+
+--------------------------------------------------------------------------------
+NAME:        polarity_gap
+GROUP:       sentiment
+DEFINITION:  Magnitude of directional conviction from counts.
+FORMULA:     |positive_count - negative_count| / total_articles
+INPUTS:      sentiment_analysis metrics.
+RANGE/UNITS: 0-1.
+NORMALIZATION: Inverted: score(1 - gap, 0.4, 0.95). Low gap is risky
+             (conflicting coverage).
+TRADING USE: Gap > 0.4 with matching price action: high-conviction momentum
+             trade. Gap < 0.1: mean-reversion or stay flat - market is
+             undecided.
+CAVEATS:     Counts-based; ignores score magnitude.
+
+--------------------------------------------------------------------------------
+NAME:        sentiment_vol_proxy
+GROUP:       sentiment
+DEFINITION:  dispersion * max(news_volume_zscore, 0). Combines disagreement and
+             volume to proxy "narrative turbulence."
+FORMULA:     dispersion * max(nv_z, 0)
+INPUTS:      dispersion, news_volume_zscore.
+RANGE/UNITS: 0 - ~3.
+NORMALIZATION: score(value, 0.1, 1.5).
+TRADING USE: Strong leading indicator of realized vol spikes next 1-3 sessions.
+             Reduce leverage when > 1.0, restore when it decays below 0.3.
+CAVEATS:     Needs both inputs; if either is None the metric is omitted.
+
+================================================================================
+COMPOSITE & RECOMMENDATIONS
+================================================================================
+
+--------------------------------------------------------------------------------
+NAME:        market_risk.index
+GROUP:       composite
+DEFINITION:  Mean of the 0-100 contributions of all available market metrics.
+TRADING USE: Quick single-number summary of "how dangerous is the price history
+             right now." Use as a sizing dial: position_size_pct *= (100 - idx)/100
+             for a conservative overlay.
+CAVEATS:     Equal-weights submetrics; override with config for specific styles.
+
+--------------------------------------------------------------------------------
+NAME:        sentiment_risk.index
+GROUP:       composite
+DEFINITION:  Mean of the 0-100 contributions of all available sentiment metrics.
+TRADING USE: Treat as an event-risk thermometer, orthogonal to price-based risk.
+CAVEATS:     Depends on news coverage density - thin coverage tickers get
+             noisy readings.
+
+--------------------------------------------------------------------------------
+NAME:        composite_risk_score
+GROUP:       composite
+DEFINITION:  Weighted combination of market_risk.index and sentiment_risk.index.
+FORMULA:     w_m * market_idx + w_s * sentiment_idx  (default w_m=0.7, w_s=0.3)
+TRADING USE: Gate trades: e.g. only initiate new longs when composite < 50,
+             only add when < 34 ("low"). For existing positions, bucket moves
+             trigger alerts: low -> moderate = warn; moderate -> high = reduce.
+CAVEATS:     Single number; always inspect sub-metrics before acting.
+
+--------------------------------------------------------------------------------
+NAME:        risk_bucket
+GROUP:       composite
+DEFINITION:  low (<34), moderate (34-66), high (>=67).
+TRADING USE: Simple guardrail for rule-based traders and alerts.
+
+--------------------------------------------------------------------------------
+NAME:        suggested_stop_loss_pct
+GROUP:       recommendation
+DEFINITION:  -k * atr14_pct with default k = 2. Percent stop distance from
+             entry suggested by recent range.
+TRADING USE: Directly applicable: stop_price = entry * (1 + stop_pct).
+             Scale k with composite_risk_score - raise to 2.5-3 in moderate,
+             3+ in high to avoid whipsaws.
+CAVEATS:     Does not account for gap risk; combine with gap_risk_freq.
+
+--------------------------------------------------------------------------------
+NAME:        kelly_fraction_capped
+GROUP:       recommendation
+DEFINITION:  Capped Kelly-style fraction of capital based on Sharpe/vol.
+FORMULA:     clip(sharpe / vol_ann_1y, 0, 0.25)
+TRADING USE: Use at most half-Kelly (cap / 2) for single names; full Kelly
+             only for diversified portfolios. Scales your risk to the evidence.
+CAVEATS:     Kelly assumes stationary edge - wrong for single-name equities
+             short-term; always cap.
+
+--------------------------------------------------------------------------------
+NAME:        position_size_pct_of_account / position_size_usd
+GROUP:       recommendation
+DEFINITION:  Dollar risk bucketing using the user-supplied account size and
+             max_risk_pct, divided by the suggested stop.
+FORMULA:     risk_$ = account * max_risk_pct / 100
+             size_$ = risk_$ / |stop_pct|
+TRADING USE: Ready-to-use share count: shares = floor(size_usd / last_price).
+             Respect the cap at 100% of account (no leverage assumed).
+CAVEATS:     Assumes full fill at stop; widen for slippage on low-liquidity
+             names (subtract 1-5 bps of expected slippage from stop distance).
+================================================================================
+END OF METRICS DICTIONARY
+================================================================================

@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://risk-calculator.local/contracts/risk_calculator_to_client.response.json",
+  "title": "RiskCalculatorResponse",
+  "description": "Full risk report returned by POST /api/risk.",
+  "type": "object",
+  "required": [
+    "ticker",
+    "as_of",
+    "composite_risk_score",
+    "risk_bucket",
+    "market_risk",
+    "sentiment_risk",
+    "recommendations",
+    "warnings",
+    "meta"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "ticker": { "type": "string" },
+    "as_of": { "type": "string", "description": "ISO 8601 date of the report." },
+    "composite_risk_score": { "type": "number", "minimum": 0, "maximum": 100 },
+    "risk_bucket": { "type": "string", "enum": ["low", "moderate", "high"] },
+    "market_risk": {
+      "type": "object",
+      "required": ["index", "metrics"],
+      "additionalProperties": false,
+      "properties": {
+        "index": { "type": "number", "minimum": 0, "maximum": 100 },
+        "metrics": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "vol_ann_30d": { "type": ["number", "null"] },
+            "vol_ann_90d": { "type": ["number", "null"] },
+            "vol_ann_1y": { "type": ["number", "null"] },
+            "downside_deviation_ann": { "type": ["number", "null"] },
+            "var_95_hist_1d": { "type": ["number", "null"] },
+            "var_99_hist_1d": { "type": ["number", "null"] },
+            "var_95_param_1d": { "type": ["number", "null"] },
+            "var_99_param_1d": { "type": ["number", "null"] },
+            "cvar_95_1d": { "type": ["number", "null"] },
+            "max_drawdown": { "type": ["number", "null"] },
+            "max_drawdown_duration_days": { "type": ["integer", "null"] },
+            "beta": { "type": ["number", "null"] },
+            "sharpe": { "type": ["number", "null"] },
+            "sortino": { "type": ["number", "null"] },
+            "skew": { "type": ["number", "null"] },
+            "excess_kurtosis": { "type": ["number", "null"] },
+            "atr14_pct": { "type": ["number", "null"] },
+            "gap_risk_freq": { "type": ["number", "null"] },
+            "liquidity_score": { "type": ["number", "null"] },
+            "range_52w_position": { "type": ["number", "null"] }
+          }
+        }
+      }
+    },
+    "sentiment_risk": {
+      "type": "object",
+      "required": ["index", "metrics"],
+      "additionalProperties": false,
+      "properties": {
+        "index": { "type": "number", "minimum": 0, "maximum": 100 },
+        "metrics": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "negative_ratio": { "type": ["number", "null"] },
+            "dispersion": { "type": ["number", "null"] },
+            "momentum_24h_vs_7d": { "type": ["number", "null"] },
+            "recency_weighted_sentiment": { "type": ["number", "null"] },
+            "news_volume_zscore": { "type": ["number", "null"] },
+            "source_concentration_hhi": { "type": ["number", "null"] },
+            "confidence": { "type": ["number", "null"] },
+            "extreme_score_share": { "type": ["number", "null"] },
+            "polarity_gap": { "type": ["number", "null"] },
+            "sentiment_vol_proxy": { "type": ["number", "null"] }
+          }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "suggested_stop_loss_pct": { "type": ["number", "null"] },
+        "kelly_fraction_capped": { "type": ["number", "null"] },
+        "position_size_pct_of_account": { "type": ["number", "null"] },
+        "position_size_usd": { "type": ["number", "null"] }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "meta": {
+      "type": "object",
+      "required": ["sentiment_fetched_at", "price_data_as_of"],
+      "additionalProperties": false,
+      "properties": {
+        "sentiment_fetched_at": { "type": "string" },
+        "price_data_as_of": { "type": "string" },
+        "benchmark": { "type": "string" },
+        "lookback_days": { "type": "integer" },
+        "weights": {
+          "type": "object",
+          "properties": {
+            "market": { "type": "number" },
+            "sentiment": { "type": "number" }
+          }
+        }
+      }
+    }
+  }
+}

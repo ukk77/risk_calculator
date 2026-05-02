@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://risk-calculator.local/contracts/risk_calculator_to_sentiment_analysis.request.json",
+  "title": "SentimentAnalyzeRequest",
+  "description": "Request body sent by risk_calculator to the sentiment_analysis service's POST /api/analyze endpoint.",
+  "type": "object",
+  "required": ["ticker", "company_name"],
+  "additionalProperties": false,
+  "properties": {
+    "ticker": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9.\\-]{0,9}$"
+    },
+    "company_name": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "examples": [
+    { "ticker": "MSFT", "company_name": "Microsoft Corporation" }
+  ]
+}

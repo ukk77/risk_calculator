@@ -1,0 +1,67 @@
+{
+  "ticker": "AAPL",
+  "as_of": "2026-04-22",
+  "composite_risk_score": 37.51,
+  "risk_bucket": "moderate",
+  "market_risk": {
+    "index": 36.71,
+    "metrics": {
+      "vol_ann_30d": 0.23262498293969125,
+      "vol_ann_90d": 0.23243798268337834,
+      "vol_ann_1y": 0.23585894937402715,
+      "downside_deviation_ann": 0.2265948371011984,
+      "var_95_hist_1d": -0.03183870683666234,
+      "var_99_hist_1d": -0.05051065072693268,
+      "var_95_param_1d": -0.030916558420404274,
+      "var_99_param_1d": -0.04384242011453464,
+      "cvar_95_1d": -0.044074992977203686,
+      "max_drawdown": -0.33360520592779397,
+      "max_drawdown_duration_days": 202,
+      "beta": 1.1884491304980196,
+      "sharpe": 0.11602377887650812,
+      "sortino": 0.15426625805259403,
+      "skew": 0.6075467417762125,
+      "excess_kurtosis": 11.582544518114688,
+      "atr14_pct": 0.023078693102337143,
+      "gap_risk_freq": 0.04664723032069971,
+      "liquidity_score": 100.0,
+      "range_52w_position": 0.788971170552576
+    }
+  },
+  "sentiment_risk": {
+    "index": 39.38,
+    "metrics": {
+      "negative_ratio": 0.0,
+      "dispersion": 0.0,
+      "momentum_24h_vs_7d": null,
+      "recency_weighted_sentiment": 0.0,
+      "news_volume_zscore": -1.0272172088459919,
+      "source_concentration_hhi": 0.8668850124599501,
+      "confidence": 0.0,
+      "extreme_score_share": 0.0,
+      "polarity_gap": 0.0,
+      "sentiment_vol_proxy": 0.0
+    }
+  },
+  "recommendations": {
+    "suggested_stop_loss_pct": -0.046157386204674286,
+    "kelly_fraction_capped": 0.25,
+    "position_size_pct_of_account": 21.66500493692885,
+    "position_size_usd": 2166.500493692885
+  },
+  "warnings": [
+    "High source concentration: 93% of articles from 'finnhub'.",
+    "Low sentiment confidence (0.00).",
+    "Fat-tailed return distribution (excess kurtosis > 5); VaR may understate risk."
+  ],
+  "meta": {
+    "sentiment_fetched_at": "2026-04-22T20:15:15.324824+00:00",
+    "price_data_as_of": "2026-04-21",
+    "benchmark": "SPY",
+    "lookback_days": 504,
+    "weights": {
+      "market": 0.7,
+      "sentiment": 0.3
+    }
+  }
+}
