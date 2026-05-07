@@ -1,0 +1,3795 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "cli.py",
+      "file_type": "code",
+      "source_file": "cli.py",
+      "source_location": "L1",
+      "id": "cli_py",
+      "community": 11,
+      "norm_label": "cli.py"
+    },
+    {
+      "label": "_parse_args()",
+      "file_type": "code",
+      "source_file": "cli.py",
+      "source_location": "L31",
+      "id": "risk_calculator_cli_parse_args",
+      "community": 11,
+      "norm_label": "_parse_args()"
+    },
+    {
+      "label": "_print_report()",
+      "file_type": "code",
+      "source_file": "cli.py",
+      "source_location": "L52",
+      "id": "risk_calculator_cli_print_report",
+      "community": 11,
+      "norm_label": "_print_report()"
+    },
+    {
+      "label": "_serve()",
+      "file_type": "code",
+      "source_file": "cli.py",
+      "source_location": "L95",
+      "id": "risk_calculator_cli_serve",
+      "community": 11,
+      "norm_label": "_serve()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "cli.py",
+      "source_location": "L100",
+      "id": "risk_calculator_cli_main",
+      "community": 11,
+      "norm_label": "main()"
+    },
+    {
+      "label": "Risk Calculator CLI.  Examples:   python cli.py MSFT --company \"Microsoft Corpor",
+      "file_type": "rationale",
+      "source_file": "cli.py",
+      "source_location": "L1",
+      "id": "risk_calculator_cli_rationale_1",
+      "community": 11,
+      "norm_label": "risk calculator cli.  examples:   python cli.py msft --company \"microsoft corpor"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "backend/__init__.py",
+      "source_location": "L1",
+      "id": "backend_init_py",
+      "community": 12,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "backend/app/main.py",
+      "source_location": "L1",
+      "id": "backend_app_main_py",
+      "community": 4,
+      "norm_label": "main.py"
+    },
+    {
+      "label": "health()",
+      "file_type": "code",
+      "source_file": "backend/app/main.py",
+      "source_location": "L23",
+      "id": "app_main_health",
+      "community": 4,
+      "norm_label": "health()"
+    },
+    {
+      "label": "risk()",
+      "file_type": "code",
+      "source_file": "backend/app/main.py",
+      "source_location": "L33",
+      "id": "app_main_risk",
+      "community": 4,
+      "norm_label": "risk()"
+    },
+    {
+      "label": "get_risk_history()",
+      "file_type": "code",
+      "source_file": "backend/app/main.py",
+      "source_location": "L99",
+      "id": "app_main_get_risk_history",
+      "community": 4,
+      "norm_label": "get_risk_history()"
+    },
+    {
+      "label": "FastAPI entry point for risk_calculator.",
+      "file_type": "rationale",
+      "source_file": "backend/app/main.py",
+      "source_location": "L1",
+      "id": "app_main_rationale_1",
+      "community": 4,
+      "norm_label": "fastapi entry point for risk_calculator."
+    },
+    {
+      "label": "Return historical risk snapshots for a ticker (newest first).      Each snapshot",
+      "file_type": "rationale",
+      "source_file": "backend/app/main.py",
+      "source_location": "L100",
+      "id": "app_main_rationale_100",
+      "community": 4,
+      "norm_label": "return historical risk snapshots for a ticker (newest first).      each snapshot"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "backend/app/__init__.py",
+      "source_location": "L1",
+      "id": "backend_app_init_py",
+      "community": 13,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "schemas.py",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L1",
+      "id": "backend_app_models_schemas_py",
+      "community": 1,
+      "norm_label": "schemas.py"
+    },
+    {
+      "label": "TopicKeyword",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L11",
+      "id": "models_schemas_topickeyword",
+      "community": 1,
+      "norm_label": "topickeyword"
+    },
+    {
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "basemodel",
+      "community": 1,
+      "norm_label": "basemodel"
+    },
+    {
+      "label": "AnalystRatings",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L18",
+      "id": "models_schemas_analystratings",
+      "community": 1,
+      "norm_label": "analystratings"
+    },
+    {
+      "label": "LeadLagPoint",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L32",
+      "id": "models_schemas_leadlagpoint",
+      "community": 1,
+      "norm_label": "leadlagpoint"
+    },
+    {
+      "label": "PriceCorrelation",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L38",
+      "id": "models_schemas_pricecorrelation",
+      "community": 1,
+      "norm_label": "pricecorrelation"
+    },
+    {
+      "label": "Weights",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L48",
+      "id": "models_schemas_weights",
+      "community": 1,
+      "norm_label": "weights"
+    },
+    {
+      "label": "RiskRequest",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L54",
+      "id": "models_schemas_riskrequest",
+      "community": 1,
+      "norm_label": "riskrequest"
+    },
+    {
+      "label": "SentimentArticle",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L68",
+      "id": "models_schemas_sentimentarticle",
+      "community": 1,
+      "norm_label": "sentimentarticle"
+    },
+    {
+      "label": "SentimentMetrics",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L80",
+      "id": "models_schemas_sentimentmetrics",
+      "community": 1,
+      "norm_label": "sentimentmetrics"
+    },
+    {
+      "label": "SentimentResponse",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L90",
+      "id": "models_schemas_sentimentresponse",
+      "community": 1,
+      "norm_label": "sentimentresponse"
+    },
+    {
+      "label": "MarketMetrics",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L105",
+      "id": "models_schemas_marketmetrics",
+      "community": 1,
+      "norm_label": "marketmetrics"
+    },
+    {
+      "label": "SentimentRiskMetrics",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L129",
+      "id": "models_schemas_sentimentriskmetrics",
+      "community": 1,
+      "norm_label": "sentimentriskmetrics"
+    },
+    {
+      "label": "MarketRiskBlock",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L143",
+      "id": "models_schemas_marketriskblock",
+      "community": 1,
+      "norm_label": "marketriskblock"
+    },
+    {
+      "label": "SentimentRiskBlock",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L149",
+      "id": "models_schemas_sentimentriskblock",
+      "community": 1,
+      "norm_label": "sentimentriskblock"
+    },
+    {
+      "label": "Recommendations",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L155",
+      "id": "models_schemas_recommendations",
+      "community": 1,
+      "norm_label": "recommendations"
+    },
+    {
+      "label": "Meta",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L163",
+      "id": "models_schemas_meta",
+      "community": 1,
+      "norm_label": "meta"
+    },
+    {
+      "label": "RiskResponse",
+      "file_type": "code",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L172",
+      "id": "models_schemas_riskresponse",
+      "community": 1,
+      "norm_label": "riskresponse"
+    },
+    {
+      "label": "Pydantic models matching the JSON Schemas in contracts/.",
+      "file_type": "rationale",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L1",
+      "id": "models_schemas_rationale_1",
+      "community": 1,
+      "norm_label": "pydantic models matching the json schemas in contracts/."
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "backend/app/models/__init__.py",
+      "source_location": "L1",
+      "id": "backend_app_models_init_py",
+      "community": 14,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "composite.py",
+      "file_type": "code",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L1",
+      "id": "backend_app_services_composite_py",
+      "community": 2,
+      "norm_label": "composite.py"
+    },
+    {
+      "label": "_market_contributions()",
+      "file_type": "code",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L16",
+      "id": "services_composite_market_contributions",
+      "community": 2,
+      "norm_label": "_market_contributions()"
+    },
+    {
+      "label": "_sentiment_contributions()",
+      "file_type": "code",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L63",
+      "id": "services_composite_sentiment_contributions",
+      "community": 2,
+      "norm_label": "_sentiment_contributions()"
+    },
+    {
+      "label": "_avg()",
+      "file_type": "code",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L104",
+      "id": "services_composite_avg",
+      "community": 2,
+      "norm_label": "_avg()"
+    },
+    {
+      "label": "compute_indices()",
+      "file_type": "code",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L108",
+      "id": "services_composite_compute_indices",
+      "community": 2,
+      "norm_label": "compute_indices()"
+    },
+    {
+      "label": "composite_score()",
+      "file_type": "code",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L114",
+      "id": "services_composite_composite_score",
+      "community": 2,
+      "norm_label": "composite_score()"
+    },
+    {
+      "label": "bucket()",
+      "file_type": "code",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L123",
+      "id": "services_composite_bucket",
+      "community": 2,
+      "norm_label": "bucket()"
+    },
+    {
+      "label": "Normalize sub-metrics to 0-100 risk contributions and combine into a composite s",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L1",
+      "id": "services_composite_rationale_1",
+      "community": 2,
+      "norm_label": "normalize sub-metrics to 0-100 risk contributions and combine into a composite s"
+    },
+    {
+      "label": "db.py",
+      "file_type": "code",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L1",
+      "id": "backend_app_services_db_py",
+      "community": 8,
+      "norm_label": "db.py"
+    },
+    {
+      "label": "_get_conn()",
+      "file_type": "code",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L64",
+      "id": "services_db_get_conn",
+      "community": 8,
+      "norm_label": "_get_conn()"
+    },
+    {
+      "label": "init_db()",
+      "file_type": "code",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L70",
+      "id": "services_db_init_db",
+      "community": 8,
+      "norm_label": "init_db()"
+    },
+    {
+      "label": "save_snapshot()",
+      "file_type": "code",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L113",
+      "id": "services_db_save_snapshot",
+      "community": 8,
+      "norm_label": "save_snapshot()"
+    },
+    {
+      "label": "get_history()",
+      "file_type": "code",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L166",
+      "id": "services_db_get_history",
+      "community": 8,
+      "norm_label": "get_history()"
+    },
+    {
+      "label": "SQLite-based historical risk tracking.  Mirrors sentiment_analysis/backend/app/s",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L1",
+      "id": "services_db_rationale_1",
+      "community": 8,
+      "norm_label": "sqlite-based historical risk tracking.  mirrors sentiment_analysis/backend/app/s"
+    },
+    {
+      "label": "Create the risk_snapshots table and index if they don't exist.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L71",
+      "id": "services_db_rationale_71",
+      "community": 8,
+      "norm_label": "create the risk_snapshots table and index if they don't exist."
+    },
+    {
+      "label": "Persist one RiskResponse (as a dict) to the DB.      Expects the dict form of th",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L114",
+      "id": "services_db_rationale_114",
+      "community": 8,
+      "norm_label": "persist one riskresponse (as a dict) to the db.      expects the dict form of th"
+    },
+    {
+      "label": "Return the last *limit* snapshots for *ticker*, newest first.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L167",
+      "id": "services_db_rationale_167",
+      "community": 8,
+      "norm_label": "return the last *limit* snapshots for *ticker*, newest first."
+    },
+    {
+      "label": "market_data.py",
+      "file_type": "code",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L1",
+      "id": "backend_app_services_market_data_py",
+      "community": 9,
+      "norm_label": "market_data.py"
+    },
+    {
+      "label": "_cache_path()",
+      "file_type": "code",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L17",
+      "id": "services_market_data_cache_path",
+      "community": 9,
+      "norm_label": "_cache_path()"
+    },
+    {
+      "label": "_fresh()",
+      "file_type": "code",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L22",
+      "id": "services_market_data_fresh",
+      "community": 9,
+      "norm_label": "_fresh()"
+    },
+    {
+      "label": "fetch_ohlcv()",
+      "file_type": "code",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L29",
+      "id": "services_market_data_fetch_ohlcv",
+      "community": 9,
+      "norm_label": "fetch_ohlcv()"
+    },
+    {
+      "label": "fetch_risk_free_rate_annual()",
+      "file_type": "code",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L64",
+      "id": "services_market_data_fetch_risk_free_rate_annual",
+      "community": 9,
+      "norm_label": "fetch_risk_free_rate_annual()"
+    },
+    {
+      "label": "Historical price data fetch (yfinance) with simple on-disk cache.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L1",
+      "id": "services_market_data_rationale_1",
+      "community": 9,
+      "norm_label": "historical price data fetch (yfinance) with simple on-disk cache."
+    },
+    {
+      "label": "Return daily OHLCV indexed by date (UTC-naive). Uses parquet cache.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L30",
+      "id": "services_market_data_rationale_30",
+      "community": 9,
+      "norm_label": "return daily ohlcv indexed by date (utc-naive). uses parquet cache."
+    },
+    {
+      "label": "Return annualized risk-free rate proxy (^IRX is quoted as % annualized).",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L65",
+      "id": "services_market_data_rationale_65",
+      "community": 9,
+      "norm_label": "return annualized risk-free rate proxy (^irx is quoted as % annualized)."
+    },
+    {
+      "label": "report.py",
+      "file_type": "code",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L1",
+      "id": "backend_app_services_report_py",
+      "community": 4,
+      "norm_label": "report.py"
+    },
+    {
+      "label": "_suggested_stop_loss()",
+      "file_type": "code",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L23",
+      "id": "services_report_suggested_stop_loss",
+      "community": 4,
+      "norm_label": "_suggested_stop_loss()"
+    },
+    {
+      "label": "_kelly_fraction_capped()",
+      "file_type": "code",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L29",
+      "id": "services_report_kelly_fraction_capped",
+      "community": 4,
+      "norm_label": "_kelly_fraction_capped()"
+    },
+    {
+      "label": "_position_size()",
+      "file_type": "code",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L42",
+      "id": "services_report_position_size",
+      "community": 4,
+      "norm_label": "_position_size()"
+    },
+    {
+      "label": "_build_warnings()",
+      "file_type": "code",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L58",
+      "id": "services_report_build_warnings",
+      "community": 4,
+      "norm_label": "_build_warnings()"
+    },
+    {
+      "label": "build_report()",
+      "file_type": "code",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L85",
+      "id": "services_report_build_report",
+      "community": 4,
+      "norm_label": "build_report()"
+    },
+    {
+      "label": "Assemble the final RiskResponse.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L1",
+      "id": "services_report_rationale_1",
+      "community": 4,
+      "norm_label": "assemble the final riskresponse."
+    },
+    {
+      "label": "risk_metrics.py",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L1",
+      "id": "backend_app_services_risk_metrics_py",
+      "community": 0,
+      "norm_label": "risk_metrics.py"
+    },
+    {
+      "label": "rolling_vol_annual()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L20",
+      "id": "services_risk_metrics_rolling_vol_annual",
+      "community": 0,
+      "norm_label": "rolling_vol_annual()"
+    },
+    {
+      "label": "downside_deviation_annual()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L27",
+      "id": "services_risk_metrics_downside_deviation_annual",
+      "community": 0,
+      "norm_label": "downside_deviation_annual()"
+    },
+    {
+      "label": "historical_var()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L38",
+      "id": "services_risk_metrics_historical_var",
+      "community": 0,
+      "norm_label": "historical_var()"
+    },
+    {
+      "label": "parametric_var()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L44",
+      "id": "services_risk_metrics_parametric_var",
+      "community": 0,
+      "norm_label": "parametric_var()"
+    },
+    {
+      "label": "conditional_var()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L52",
+      "id": "services_risk_metrics_conditional_var",
+      "community": 0,
+      "norm_label": "conditional_var()"
+    },
+    {
+      "label": "max_drawdown()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L64",
+      "id": "services_risk_metrics_max_drawdown",
+      "community": 0,
+      "norm_label": "max_drawdown()"
+    },
+    {
+      "label": "beta()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L86",
+      "id": "services_risk_metrics_beta",
+      "community": 0,
+      "norm_label": "beta()"
+    },
+    {
+      "label": "sharpe_ratio()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L97",
+      "id": "services_risk_metrics_sharpe_ratio",
+      "community": 0,
+      "norm_label": "sharpe_ratio()"
+    },
+    {
+      "label": "sortino_ratio()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L108",
+      "id": "services_risk_metrics_sortino_ratio",
+      "community": 0,
+      "norm_label": "sortino_ratio()"
+    },
+    {
+      "label": "skewness()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L124",
+      "id": "services_risk_metrics_skewness",
+      "community": 0,
+      "norm_label": "skewness()"
+    },
+    {
+      "label": "excess_kurtosis()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L130",
+      "id": "services_risk_metrics_excess_kurtosis",
+      "community": 0,
+      "norm_label": "excess_kurtosis()"
+    },
+    {
+      "label": "atr14_pct()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L138",
+      "id": "services_risk_metrics_atr14_pct",
+      "community": 0,
+      "norm_label": "atr14_pct()"
+    },
+    {
+      "label": "gap_risk_frequency()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L154",
+      "id": "services_risk_metrics_gap_risk_frequency",
+      "community": 0,
+      "norm_label": "gap_risk_frequency()"
+    },
+    {
+      "label": "liquidity_score()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L170",
+      "id": "services_risk_metrics_liquidity_score",
+      "community": 0,
+      "norm_label": "liquidity_score()"
+    },
+    {
+      "label": "range_52w_position()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L186",
+      "id": "services_risk_metrics_range_52w_position",
+      "community": 0,
+      "norm_label": "range_52w_position()"
+    },
+    {
+      "label": "compute_market_metrics()",
+      "file_type": "code",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L198",
+      "id": "services_risk_metrics_compute_market_metrics",
+      "community": 0,
+      "norm_label": "compute_market_metrics()"
+    },
+    {
+      "label": "Market-based risk sub-metrics.  All functions accept a pandas Series/DataFrame a",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L1",
+      "id": "services_risk_metrics_rationale_1",
+      "community": 0,
+      "norm_label": "market-based risk sub-metrics.  all functions accept a pandas series/dataframe a"
+    },
+    {
+      "label": "Fraction of overnight gaps whose magnitude exceeds sigma_mult * realized daily s",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L155",
+      "id": "services_risk_metrics_rationale_155",
+      "community": 0,
+      "norm_label": "fraction of overnight gaps whose magnitude exceeds sigma_mult * realized daily s"
+    },
+    {
+      "label": "0-100 score: higher = more liquid. Based on avg dollar volume and zero-volume sh",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L171",
+      "id": "services_risk_metrics_rationale_171",
+      "community": 0,
+      "norm_label": "0-100 score: higher = more liquid. based on avg dollar volume and zero-volume sh"
+    },
+    {
+      "label": "sentiment_client.py",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L1",
+      "id": "backend_app_services_sentiment_client_py",
+      "community": 3,
+      "norm_label": "sentiment_client.py"
+    },
+    {
+      "label": "SentimentServiceDownError",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L24",
+      "id": "services_sentiment_client_sentimentservicedownerror",
+      "community": 3,
+      "norm_label": "sentimentservicedownerror"
+    },
+    {
+      "label": "RuntimeError",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "runtimeerror",
+      "community": 3,
+      "norm_label": "runtimeerror"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L27",
+      "id": "services_sentiment_client_sentimentservicedownerror_init",
+      "community": 3,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": "SentimentContractError",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L36",
+      "id": "services_sentiment_client_sentimentcontracterror",
+      "community": 3,
+      "norm_label": "sentimentcontracterror"
+    },
+    {
+      "label": "_load_validator()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L40",
+      "id": "services_sentiment_client_load_validator",
+      "community": 3,
+      "norm_label": "_load_validator()"
+    },
+    {
+      "label": "_get_validator()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L49",
+      "id": "services_sentiment_client_get_validator",
+      "community": 3,
+      "norm_label": "_get_validator()"
+    },
+    {
+      "label": "check_health()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L56",
+      "id": "services_sentiment_client_check_health",
+      "community": 3,
+      "norm_label": "check_health()"
+    },
+    {
+      "label": "fetch_sentiment()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L65",
+      "id": "services_sentiment_client_fetch_sentiment",
+      "community": 3,
+      "norm_label": "fetch_sentiment()"
+    },
+    {
+      "label": "load_sentiment_from_file()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L110",
+      "id": "services_sentiment_client_load_sentiment_from_file",
+      "community": 3,
+      "norm_label": "load_sentiment_from_file()"
+    },
+    {
+      "label": "HTTP client for the companion sentiment_analysis service.  Validates responses a",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L1",
+      "id": "services_sentiment_client_rationale_1",
+      "community": 3,
+      "norm_label": "http client for the companion sentiment_analysis service.  validates responses a"
+    },
+    {
+      "label": "Raised when the sentiment_analysis service is unreachable.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L25",
+      "id": "services_sentiment_client_rationale_25",
+      "community": 3,
+      "norm_label": "raised when the sentiment_analysis service is unreachable."
+    },
+    {
+      "label": "Raised when the upstream response violates the JSON Schema contract.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L37",
+      "id": "services_sentiment_client_rationale_37",
+      "community": 3,
+      "norm_label": "raised when the upstream response violates the json schema contract."
+    },
+    {
+      "label": "Call POST /api/analyze and return a validated SentimentResponse.      Raises Sen",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L73",
+      "id": "services_sentiment_client_rationale_73",
+      "community": 3,
+      "norm_label": "call post /api/analyze and return a validated sentimentresponse.      raises sen"
+    },
+    {
+      "label": "Dev-only: load a cached sentiment_analysis JSON file (e.g. msft_result.json).",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L111",
+      "id": "services_sentiment_client_rationale_111",
+      "community": 3,
+      "norm_label": "dev-only: load a cached sentiment_analysis json file (e.g. msft_result.json)."
+    },
+    {
+      "label": "sentiment_risk.py",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L1",
+      "id": "backend_app_services_sentiment_risk_py",
+      "community": 6,
+      "norm_label": "sentiment_risk.py"
+    },
+    {
+      "label": "_parse_ts()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L13",
+      "id": "services_sentiment_risk_parse_ts",
+      "community": 6,
+      "norm_label": "_parse_ts()"
+    },
+    {
+      "label": "negative_ratio()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L23",
+      "id": "services_sentiment_risk_negative_ratio",
+      "community": 6,
+      "norm_label": "negative_ratio()"
+    },
+    {
+      "label": "dispersion()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L30",
+      "id": "services_sentiment_risk_dispersion",
+      "community": 6,
+      "norm_label": "dispersion()"
+    },
+    {
+      "label": "momentum_24h_vs_7d()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L37",
+      "id": "services_sentiment_risk_momentum_24h_vs_7d",
+      "community": 6,
+      "norm_label": "momentum_24h_vs_7d()"
+    },
+    {
+      "label": "recency_weighted_sentiment()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L54",
+      "id": "services_sentiment_risk_recency_weighted_sentiment",
+      "community": 6,
+      "norm_label": "recency_weighted_sentiment()"
+    },
+    {
+      "label": "news_volume_zscore()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L75",
+      "id": "services_sentiment_risk_news_volume_zscore",
+      "community": 6,
+      "norm_label": "news_volume_zscore()"
+    },
+    {
+      "label": "source_concentration_hhi()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L97",
+      "id": "services_sentiment_risk_source_concentration_hhi",
+      "community": 6,
+      "norm_label": "source_concentration_hhi()"
+    },
+    {
+      "label": "extreme_score_share()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L106",
+      "id": "services_sentiment_risk_extreme_score_share",
+      "community": 6,
+      "norm_label": "extreme_score_share()"
+    },
+    {
+      "label": "polarity_gap()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L113",
+      "id": "services_sentiment_risk_polarity_gap",
+      "community": 6,
+      "norm_label": "polarity_gap()"
+    },
+    {
+      "label": "compute_sentiment_metrics()",
+      "file_type": "code",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L120",
+      "id": "services_sentiment_risk_compute_sentiment_metrics",
+      "community": 6,
+      "norm_label": "compute_sentiment_metrics()"
+    },
+    {
+      "label": "Sentiment-derived risk sub-metrics computed from SentimentResponse.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L1",
+      "id": "services_sentiment_risk_rationale_1",
+      "community": 6,
+      "norm_label": "sentiment-derived risk sub-metrics computed from sentimentresponse."
+    },
+    {
+      "label": "Z-score of today's article count vs prior 7-day baseline.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L76",
+      "id": "services_sentiment_risk_rationale_76",
+      "community": 6,
+      "norm_label": "z-score of today's article count vs prior 7-day baseline."
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "backend/app/services/__init__.py",
+      "source_location": "L1",
+      "id": "backend_app_services_init_py",
+      "community": 4,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "stats.py",
+      "file_type": "code",
+      "source_file": "backend/app/utils/stats.py",
+      "source_location": "L1",
+      "id": "backend_app_utils_stats_py",
+      "community": 2,
+      "norm_label": "stats.py"
+    },
+    {
+      "label": "log_returns()",
+      "file_type": "code",
+      "source_file": "backend/app/utils/stats.py",
+      "source_location": "L13",
+      "id": "utils_stats_log_returns",
+      "community": 2,
+      "norm_label": "log_returns()"
+    },
+    {
+      "label": "annualize_vol()",
+      "file_type": "code",
+      "source_file": "backend/app/utils/stats.py",
+      "source_location": "L17",
+      "id": "utils_stats_annualize_vol",
+      "community": 2,
+      "norm_label": "annualize_vol()"
+    },
+    {
+      "label": "clip01()",
+      "file_type": "code",
+      "source_file": "backend/app/utils/stats.py",
+      "source_location": "L23",
+      "id": "utils_stats_clip01",
+      "community": 2,
+      "norm_label": "clip01()"
+    },
+    {
+      "label": "piecewise_score()",
+      "file_type": "code",
+      "source_file": "backend/app/utils/stats.py",
+      "source_location": "L27",
+      "id": "utils_stats_piecewise_score",
+      "community": 2,
+      "norm_label": "piecewise_score()"
+    },
+    {
+      "label": "Small statistical helpers.",
+      "file_type": "rationale",
+      "source_file": "backend/app/utils/stats.py",
+      "source_location": "L1",
+      "id": "utils_stats_rationale_1",
+      "community": 2,
+      "norm_label": "small statistical helpers."
+    },
+    {
+      "label": "Map a raw value to 0-100 risk contribution, linear between thresholds.      valu",
+      "file_type": "rationale",
+      "source_file": "backend/app/utils/stats.py",
+      "source_location": "L28",
+      "id": "utils_stats_rationale_28",
+      "community": 2,
+      "norm_label": "map a raw value to 0-100 risk contribution, linear between thresholds.      valu"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "backend/app/utils/__init__.py",
+      "source_location": "L1",
+      "id": "backend_app_utils_init_py",
+      "community": 15,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "test_contracts.py",
+      "file_type": "code",
+      "source_file": "tests/test_contracts.py",
+      "source_location": "L1",
+      "id": "tests_test_contracts_py",
+      "community": 10,
+      "norm_label": "test_contracts.py"
+    },
+    {
+      "label": "_load_schema()",
+      "file_type": "code",
+      "source_file": "tests/test_contracts.py",
+      "source_location": "L20",
+      "id": "tests_test_contracts_load_schema",
+      "community": 10,
+      "norm_label": "_load_schema()"
+    },
+    {
+      "label": "test_all_contracts_parse_as_json_schema()",
+      "file_type": "code",
+      "source_file": "tests/test_contracts.py",
+      "source_location": "L25",
+      "id": "tests_test_contracts_test_all_contracts_parse_as_json_schema",
+      "community": 10,
+      "norm_label": "test_all_contracts_parse_as_json_schema()"
+    },
+    {
+      "label": "test_sample_matches_sentiment_response_schema()",
+      "file_type": "code",
+      "source_file": "tests/test_contracts.py",
+      "source_location": "L34",
+      "id": "tests_test_contracts_test_sample_matches_sentiment_response_schema",
+      "community": 10,
+      "norm_label": "test_sample_matches_sentiment_response_schema()"
+    },
+    {
+      "label": "test_sample_parses_as_pydantic_model()",
+      "file_type": "code",
+      "source_file": "tests/test_contracts.py",
+      "source_location": "L43",
+      "id": "tests_test_contracts_test_sample_parses_as_pydantic_model",
+      "community": 10,
+      "norm_label": "test_sample_parses_as_pydantic_model()"
+    },
+    {
+      "label": "test_risk_request_defaults()",
+      "file_type": "code",
+      "source_file": "tests/test_contracts.py",
+      "source_location": "L51",
+      "id": "tests_test_contracts_test_risk_request_defaults",
+      "community": 10,
+      "norm_label": "test_risk_request_defaults()"
+    },
+    {
+      "label": "Validate contract schemas and Pydantic models against the sample msft_result.jso",
+      "file_type": "rationale",
+      "source_file": "tests/test_contracts.py",
+      "source_location": "L1",
+      "id": "tests_test_contracts_rationale_1",
+      "community": 10,
+      "norm_label": "validate contract schemas and pydantic models against the sample msft_result.jso"
+    },
+    {
+      "label": "IDEAS_ROADMAP.md",
+      "file_type": "document",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L1",
+      "id": "ideas_roadmap_md",
+      "community": 7,
+      "norm_label": "ideas_roadmap.md"
+    },
+    {
+      "label": "Future Uses of `sentiment_analysis` Output \u2014 Roadmap",
+      "file_type": "document",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L1",
+      "id": "risk_calculator_ideas_roadmap_future_uses_of_sentiment_analysis_output_roadmap",
+      "community": 7,
+      "norm_label": "future uses of `sentiment_analysis` output \u2014 roadmap"
+    },
+    {
+      "label": "1. Trading signals",
+      "file_type": "document",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L7",
+      "id": "risk_calculator_ideas_roadmap_1_trading_signals",
+      "community": 7,
+      "norm_label": "1. trading signals"
+    },
+    {
+      "label": "2. Portfolio / watchlist",
+      "file_type": "document",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L14",
+      "id": "risk_calculator_ideas_roadmap_2_portfolio_watchlist",
+      "community": 7,
+      "norm_label": "2. portfolio / watchlist"
+    },
+    {
+      "label": "3. Backtesting",
+      "file_type": "document",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L21",
+      "id": "risk_calculator_ideas_roadmap_3_backtesting",
+      "community": 7,
+      "norm_label": "3. backtesting"
+    },
+    {
+      "label": "4. Alerting / monitoring",
+      "file_type": "document",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L27",
+      "id": "risk_calculator_ideas_roadmap_4_alerting_monitoring",
+      "community": 7,
+      "norm_label": "4. alerting / monitoring"
+    },
+    {
+      "label": "5. Analytics / reporting",
+      "file_type": "document",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L33",
+      "id": "risk_calculator_ideas_roadmap_5_analytics_reporting",
+      "community": 7,
+      "norm_label": "5. analytics / reporting"
+    },
+    {
+      "label": "6. Risk extensions (feed back into this project)",
+      "file_type": "document",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L39",
+      "id": "risk_calculator_ideas_roadmap_6_risk_extensions_feed_back_into_this_project",
+      "community": 7,
+      "norm_label": "6. risk extensions (feed back into this project)"
+    },
+    {
+      "label": "7. UI / integrations",
+      "file_type": "document",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L46",
+      "id": "risk_calculator_ideas_roadmap_7_ui_integrations",
+      "community": 7,
+      "norm_label": "7. ui / integrations"
+    },
+    {
+      "label": "8. Data quality",
+      "file_type": "document",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L53",
+      "id": "risk_calculator_ideas_roadmap_8_data_quality",
+      "community": 7,
+      "norm_label": "8. data quality"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "id": "readme_md",
+      "community": 5,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "Risk Calculator",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "id": "risk_calculator_readme_risk_calculator",
+      "community": 5,
+      "norm_label": "risk calculator"
+    },
+    {
+      "label": "Layout",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L10",
+      "id": "risk_calculator_readme_layout",
+      "community": 5,
+      "norm_label": "layout"
+    },
+    {
+      "label": "code:block1 (risk_calculator/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L12",
+      "id": "risk_calculator_readme_codeblock_1",
+      "community": 5,
+      "norm_label": "code:block1 (risk_calculator/)"
+    },
+    {
+      "label": "Install",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L24",
+      "id": "risk_calculator_readme_install",
+      "community": 5,
+      "norm_label": "install"
+    },
+    {
+      "label": "code:powershell (python -m venv venv)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L26",
+      "id": "risk_calculator_readme_codeblock_2",
+      "community": 5,
+      "norm_label": "code:powershell (python -m venv venv)"
+    },
+    {
+      "label": "Prerequisite: start the sentiment_analysis backend",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L32",
+      "id": "risk_calculator_readme_prerequisite_start_the_sentiment_analysis_backend",
+      "community": 5,
+      "norm_label": "prerequisite: start the sentiment_analysis backend"
+    },
+    {
+      "label": "code:powershell (cd ..\\sentiment_analysis\\backend)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L36",
+      "id": "risk_calculator_readme_codeblock_3",
+      "community": 5,
+      "norm_label": "code:powershell (cd ..\\sentiment_analysis\\backend)"
+    },
+    {
+      "label": "Run the CLI",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L44",
+      "id": "risk_calculator_readme_run_the_cli",
+      "community": 5,
+      "norm_label": "run the cli"
+    },
+    {
+      "label": "code:powershell (python cli.py MSFT --company \"Microsoft Corporation\" --outpu)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L46",
+      "id": "risk_calculator_readme_codeblock_4",
+      "community": 5,
+      "norm_label": "code:powershell (python cli.py msft --company \"microsoft corporation\" --outpu)"
+    },
+    {
+      "label": "Run the API",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L50",
+      "id": "risk_calculator_readme_run_the_api",
+      "community": 5,
+      "norm_label": "run the api"
+    },
+    {
+      "label": "code:powershell (python -m uvicorn backend.app.main:app --reload --port 8100)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L52",
+      "id": "risk_calculator_readme_codeblock_5",
+      "community": 5,
+      "norm_label": "code:powershell (python -m uvicorn backend.app.main:app --reload --port 8100)"
+    },
+    {
+      "label": "Contracts",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L57",
+      "id": "risk_calculator_readme_contracts",
+      "community": 5,
+      "norm_label": "contracts"
+    },
+    {
+      "label": "Metrics",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L66",
+      "id": "risk_calculator_readme_metrics",
+      "community": 5,
+      "norm_label": "metrics"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "cli.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "cli_py",
+      "target": "risk_calculator_cli_parse_args",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "cli.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "cli_py",
+      "target": "risk_calculator_cli_print_report",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "cli.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "cli_py",
+      "target": "risk_calculator_cli_serve",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "cli.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "cli_py",
+      "target": "risk_calculator_cli_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "cli.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "risk_calculator_cli_rationale_1",
+      "target": "cli_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "cli.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "risk_calculator_cli_main",
+      "target": "risk_calculator_cli_parse_args",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "cli.py",
+      "source_location": "L175",
+      "weight": 1.0,
+      "source": "risk_calculator_cli_main",
+      "target": "risk_calculator_cli_print_report",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "cli.py",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "risk_calculator_cli_main",
+      "target": "risk_calculator_cli_serve",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "cli.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "risk_calculator_cli_main",
+      "target": "models_schemas_riskrequest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "cli.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "source": "risk_calculator_cli_main",
+      "target": "models_schemas_weights"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "cli.py",
+      "source_location": "L166",
+      "weight": 1.0,
+      "source": "risk_calculator_cli_main",
+      "target": "services_report_build_report"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "backend_app_main_py",
+      "target": "backend_app_models_schemas_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "backend_app_main_py",
+      "target": "backend_app_services_report_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "backend_app_main_py",
+      "target": "app_main_health",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "backend_app_main_py",
+      "target": "app_main_risk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "backend_app_main_py",
+      "target": "app_main_get_risk_history",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "app_main_rationale_1",
+      "target": "backend_app_main_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/app/main.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "app_main_risk",
+      "target": "services_report_build_report"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "app_main_rationale_100",
+      "target": "app_main_get_risk_history",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_topickeyword",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_analystratings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_leadlagpoint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_pricecorrelation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_weights",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_riskrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_sentimentarticle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_sentimentmetrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_sentimentresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_marketmetrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L129",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_sentimentriskmetrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L143",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_marketriskblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_sentimentriskblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L155",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_recommendations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L163",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_meta",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L172",
+      "weight": 1.0,
+      "source": "backend_app_models_schemas_py",
+      "target": "models_schemas_riskresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "models_schemas_rationale_1",
+      "target": "backend_app_models_schemas_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "backend_app_services_composite_py",
+      "target": "backend_app_models_schemas_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "backend_app_services_report_py",
+      "target": "backend_app_models_schemas_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "backend_app_models_schemas_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_client_py",
+      "target": "backend_app_models_schemas_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_risk_py",
+      "target": "backend_app_models_schemas_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "models_schemas_topickeyword",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "models_schemas_analystratings",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "models_schemas_leadlagpoint",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "models_schemas_pricecorrelation",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "models_schemas_weights",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "models_schemas_riskrequest",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "models_schemas_sentimentarticle",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "models_schemas_sentimentmetrics",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "models_schemas_sentimentresponse",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "models_schemas_marketmetrics",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L129",
+      "weight": 1.0,
+      "source": "models_schemas_sentimentriskmetrics",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L143",
+      "weight": 1.0,
+      "source": "models_schemas_marketriskblock",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "models_schemas_sentimentriskblock",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L155",
+      "weight": 1.0,
+      "source": "models_schemas_recommendations",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L163",
+      "weight": 1.0,
+      "source": "models_schemas_meta",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/schemas.py",
+      "source_location": "L172",
+      "weight": 1.0,
+      "source": "models_schemas_riskresponse",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tests/test_contracts.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "tests_test_contracts_test_risk_request_defaults",
+      "target": "models_schemas_riskrequest"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L16",
+      "weight": 0.8,
+      "source": "services_sentiment_client_sentimentservicedownerror",
+      "target": "models_schemas_sentimentresponse",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L16",
+      "weight": 0.8,
+      "source": "services_sentiment_client_sentimentcontracterror",
+      "target": "models_schemas_sentimentresponse",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L209",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "models_schemas_marketmetrics"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "services_sentiment_risk_compute_sentiment_metrics",
+      "target": "models_schemas_sentimentriskmetrics"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "services_report_build_report",
+      "target": "models_schemas_marketriskblock"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "source": "services_report_build_report",
+      "target": "models_schemas_sentimentriskblock"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "services_report_build_report",
+      "target": "models_schemas_recommendations"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "source": "services_report_build_report",
+      "target": "models_schemas_meta"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "services_report_build_report",
+      "target": "models_schemas_riskresponse"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "backend_app_services_composite_py",
+      "target": "backend_app_utils_stats_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "backend_app_services_composite_py",
+      "target": "services_composite_market_contributions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "backend_app_services_composite_py",
+      "target": "services_composite_sentiment_contributions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "backend_app_services_composite_py",
+      "target": "services_composite_avg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "backend_app_services_composite_py",
+      "target": "services_composite_compute_indices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "backend_app_services_composite_py",
+      "target": "services_composite_composite_score",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "backend_app_services_composite_py",
+      "target": "services_composite_bucket",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "services_composite_rationale_1",
+      "target": "backend_app_services_composite_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "services_composite_compute_indices",
+      "target": "services_composite_market_contributions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "services_composite_market_contributions",
+      "target": "utils_stats_piecewise_score"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "services_composite_compute_indices",
+      "target": "services_composite_sentiment_contributions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "services_composite_sentiment_contributions",
+      "target": "utils_stats_piecewise_score"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/composite.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "services_composite_compute_indices",
+      "target": "services_composite_avg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "backend_app_services_db_py",
+      "target": "services_db_get_conn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "backend_app_services_db_py",
+      "target": "services_db_init_db",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "source": "backend_app_services_db_py",
+      "target": "services_db_save_snapshot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L166",
+      "weight": 1.0,
+      "source": "backend_app_services_db_py",
+      "target": "services_db_get_history",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "services_db_rationale_1",
+      "target": "backend_app_services_db_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "services_db_init_db",
+      "target": "services_db_get_conn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L161",
+      "weight": 1.0,
+      "source": "services_db_save_snapshot",
+      "target": "services_db_get_conn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L169",
+      "weight": 1.0,
+      "source": "services_db_get_history",
+      "target": "services_db_get_conn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "services_db_save_snapshot",
+      "target": "services_db_init_db",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L168",
+      "weight": 1.0,
+      "source": "services_db_get_history",
+      "target": "services_db_init_db",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "services_db_rationale_71",
+      "target": "services_db_init_db",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "services_db_rationale_114",
+      "target": "services_db_save_snapshot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/db.py",
+      "source_location": "L167",
+      "weight": 1.0,
+      "source": "services_db_rationale_167",
+      "target": "services_db_get_history",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "backend_app_services_market_data_py",
+      "target": "services_market_data_cache_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "backend_app_services_market_data_py",
+      "target": "services_market_data_fresh",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "backend_app_services_market_data_py",
+      "target": "services_market_data_fetch_ohlcv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "backend_app_services_market_data_py",
+      "target": "services_market_data_fetch_risk_free_rate_annual",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "services_market_data_rationale_1",
+      "target": "backend_app_services_market_data_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "services_market_data_fetch_ohlcv",
+      "target": "services_market_data_cache_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "services_market_data_fetch_ohlcv",
+      "target": "services_market_data_fresh",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "services_market_data_rationale_30",
+      "target": "services_market_data_fetch_ohlcv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "services_market_data_fetch_ohlcv",
+      "target": "runtimeerror"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/market_data.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "services_market_data_rationale_65",
+      "target": "services_market_data_fetch_risk_free_rate_annual",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "backend_app_services_report_py",
+      "target": "backend_app_services_init_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "backend_app_services_report_py",
+      "target": "services_report_suggested_stop_loss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "backend_app_services_report_py",
+      "target": "services_report_kelly_fraction_capped",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "backend_app_services_report_py",
+      "target": "services_report_position_size",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "backend_app_services_report_py",
+      "target": "services_report_build_warnings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "backend_app_services_report_py",
+      "target": "services_report_build_report",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "services_report_rationale_1",
+      "target": "backend_app_services_report_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "services_report_build_report",
+      "target": "services_report_suggested_stop_loss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "services_report_build_report",
+      "target": "services_report_kelly_fraction_capped",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "services_report_build_report",
+      "target": "services_report_position_size",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/report.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "services_report_build_report",
+      "target": "services_report_build_warnings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "backend_app_utils_stats_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_rolling_vol_annual",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_downside_deviation_annual",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_historical_var",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_parametric_var",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_conditional_var",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_max_drawdown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_beta",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_sharpe_ratio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_sortino_ratio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L124",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_skewness",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L130",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_excess_kurtosis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L138",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_atr14_pct",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_gap_risk_frequency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L170",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_liquidity_score",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L186",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_range_52w_position",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L198",
+      "weight": 1.0,
+      "source": "backend_app_services_risk_metrics_py",
+      "target": "services_risk_metrics_compute_market_metrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "services_risk_metrics_rationale_1",
+      "target": "backend_app_services_risk_metrics_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L210",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "services_risk_metrics_rolling_vol_annual",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L213",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "services_risk_metrics_downside_deviation_annual",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L214",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "services_risk_metrics_historical_var",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L216",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "services_risk_metrics_parametric_var",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L218",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "services_risk_metrics_conditional_var",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L207",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "services_risk_metrics_max_drawdown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L221",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "services_risk_metrics_beta",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L222",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "services_risk_metrics_sharpe_ratio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L223",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "services_risk_metrics_sortino_ratio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L224",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "services_risk_metrics_skewness",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L225",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "services_risk_metrics_excess_kurtosis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L226",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "services_risk_metrics_atr14_pct",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L227",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "services_risk_metrics_gap_risk_frequency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L155",
+      "weight": 1.0,
+      "source": "services_risk_metrics_rationale_155",
+      "target": "services_risk_metrics_gap_risk_frequency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L228",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "services_risk_metrics_liquidity_score",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L171",
+      "weight": 1.0,
+      "source": "services_risk_metrics_rationale_171",
+      "target": "services_risk_metrics_liquidity_score",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L229",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "services_risk_metrics_range_52w_position",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L204",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "utils_stats_log_returns"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/app/services/risk_metrics.py",
+      "source_location": "L212",
+      "weight": 1.0,
+      "source": "services_risk_metrics_compute_market_metrics",
+      "target": "utils_stats_annualize_vol"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_client_py",
+      "target": "services_sentiment_client_sentimentservicedownerror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_client_py",
+      "target": "services_sentiment_client_sentimentcontracterror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_client_py",
+      "target": "services_sentiment_client_load_validator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_client_py",
+      "target": "services_sentiment_client_get_validator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_client_py",
+      "target": "services_sentiment_client_check_health",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_client_py",
+      "target": "services_sentiment_client_fetch_sentiment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L110",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_client_py",
+      "target": "services_sentiment_client_load_sentiment_from_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "services_sentiment_client_rationale_1",
+      "target": "backend_app_services_sentiment_client_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "services_sentiment_client_sentimentservicedownerror",
+      "target": "runtimeerror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "services_sentiment_client_sentimentservicedownerror",
+      "target": "services_sentiment_client_sentimentservicedownerror_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "services_sentiment_client_fetch_sentiment",
+      "target": "services_sentiment_client_sentimentservicedownerror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "services_sentiment_client_rationale_25",
+      "target": "services_sentiment_client_sentimentservicedownerror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "services_sentiment_client_sentimentcontracterror",
+      "target": "runtimeerror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "services_sentiment_client_fetch_sentiment",
+      "target": "services_sentiment_client_sentimentcontracterror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "services_sentiment_client_load_sentiment_from_file",
+      "target": "services_sentiment_client_sentimentcontracterror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "services_sentiment_client_rationale_37",
+      "target": "services_sentiment_client_sentimentcontracterror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "services_sentiment_client_get_validator",
+      "target": "services_sentiment_client_load_validator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "services_sentiment_client_fetch_sentiment",
+      "target": "services_sentiment_client_get_validator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "services_sentiment_client_load_sentiment_from_file",
+      "target": "services_sentiment_client_get_validator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "services_sentiment_client_fetch_sentiment",
+      "target": "services_sentiment_client_check_health",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "services_sentiment_client_rationale_73",
+      "target": "services_sentiment_client_fetch_sentiment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_client.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "services_sentiment_client_rationale_111",
+      "target": "services_sentiment_client_load_sentiment_from_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_risk_py",
+      "target": "services_sentiment_risk_parse_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_risk_py",
+      "target": "services_sentiment_risk_negative_ratio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_risk_py",
+      "target": "services_sentiment_risk_dispersion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_risk_py",
+      "target": "services_sentiment_risk_momentum_24h_vs_7d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_risk_py",
+      "target": "services_sentiment_risk_recency_weighted_sentiment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_risk_py",
+      "target": "services_sentiment_risk_news_volume_zscore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_risk_py",
+      "target": "services_sentiment_risk_source_concentration_hhi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_risk_py",
+      "target": "services_sentiment_risk_extreme_score_share",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_risk_py",
+      "target": "services_sentiment_risk_polarity_gap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "backend_app_services_sentiment_risk_py",
+      "target": "services_sentiment_risk_compute_sentiment_metrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "services_sentiment_risk_rationale_1",
+      "target": "backend_app_services_sentiment_risk_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "services_sentiment_risk_momentum_24h_vs_7d",
+      "target": "services_sentiment_risk_parse_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "services_sentiment_risk_recency_weighted_sentiment",
+      "target": "services_sentiment_risk_parse_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "services_sentiment_risk_news_volume_zscore",
+      "target": "services_sentiment_risk_parse_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L132",
+      "weight": 1.0,
+      "source": "services_sentiment_risk_compute_sentiment_metrics",
+      "target": "services_sentiment_risk_negative_ratio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L122",
+      "weight": 1.0,
+      "source": "services_sentiment_risk_compute_sentiment_metrics",
+      "target": "services_sentiment_risk_dispersion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "services_sentiment_risk_compute_sentiment_metrics",
+      "target": "services_sentiment_risk_momentum_24h_vs_7d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L135",
+      "weight": 1.0,
+      "source": "services_sentiment_risk_compute_sentiment_metrics",
+      "target": "services_sentiment_risk_recency_weighted_sentiment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "services_sentiment_risk_compute_sentiment_metrics",
+      "target": "services_sentiment_risk_news_volume_zscore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "services_sentiment_risk_rationale_76",
+      "target": "services_sentiment_risk_news_volume_zscore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L137",
+      "weight": 1.0,
+      "source": "services_sentiment_risk_compute_sentiment_metrics",
+      "target": "services_sentiment_risk_source_concentration_hhi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "services_sentiment_risk_compute_sentiment_metrics",
+      "target": "services_sentiment_risk_extreme_score_share",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/sentiment_risk.py",
+      "source_location": "L140",
+      "weight": 1.0,
+      "source": "services_sentiment_risk_compute_sentiment_metrics",
+      "target": "services_sentiment_risk_polarity_gap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/utils/stats.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "backend_app_utils_stats_py",
+      "target": "utils_stats_log_returns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/utils/stats.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "backend_app_utils_stats_py",
+      "target": "utils_stats_annualize_vol",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/utils/stats.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "backend_app_utils_stats_py",
+      "target": "utils_stats_clip01",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/utils/stats.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "backend_app_utils_stats_py",
+      "target": "utils_stats_piecewise_score",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/utils/stats.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "utils_stats_rationale_1",
+      "target": "backend_app_utils_stats_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/utils/stats.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "utils_stats_piecewise_score",
+      "target": "utils_stats_clip01",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/utils/stats.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "utils_stats_rationale_28",
+      "target": "utils_stats_piecewise_score",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_contracts.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "tests_test_contracts_py",
+      "target": "tests_test_contracts_load_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_contracts.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "tests_test_contracts_py",
+      "target": "tests_test_contracts_test_all_contracts_parse_as_json_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_contracts.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "tests_test_contracts_py",
+      "target": "tests_test_contracts_test_sample_matches_sentiment_response_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_contracts.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "tests_test_contracts_py",
+      "target": "tests_test_contracts_test_sample_parses_as_pydantic_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_contracts.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "tests_test_contracts_py",
+      "target": "tests_test_contracts_test_risk_request_defaults",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_contracts.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "tests_test_contracts_rationale_1",
+      "target": "tests_test_contracts_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_contracts.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "tests_test_contracts_test_sample_matches_sentiment_response_schema",
+      "target": "tests_test_contracts_load_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "ideas_roadmap_md",
+      "target": "risk_calculator_ideas_roadmap_future_uses_of_sentiment_analysis_output_roadmap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "risk_calculator_ideas_roadmap_future_uses_of_sentiment_analysis_output_roadmap",
+      "target": "risk_calculator_ideas_roadmap_1_trading_signals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "risk_calculator_ideas_roadmap_future_uses_of_sentiment_analysis_output_roadmap",
+      "target": "risk_calculator_ideas_roadmap_2_portfolio_watchlist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "risk_calculator_ideas_roadmap_future_uses_of_sentiment_analysis_output_roadmap",
+      "target": "risk_calculator_ideas_roadmap_3_backtesting",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "risk_calculator_ideas_roadmap_future_uses_of_sentiment_analysis_output_roadmap",
+      "target": "risk_calculator_ideas_roadmap_4_alerting_monitoring",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "risk_calculator_ideas_roadmap_future_uses_of_sentiment_analysis_output_roadmap",
+      "target": "risk_calculator_ideas_roadmap_5_analytics_reporting",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "risk_calculator_ideas_roadmap_future_uses_of_sentiment_analysis_output_roadmap",
+      "target": "risk_calculator_ideas_roadmap_6_risk_extensions_feed_back_into_this_project",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "risk_calculator_ideas_roadmap_future_uses_of_sentiment_analysis_output_roadmap",
+      "target": "risk_calculator_ideas_roadmap_7_ui_integrations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IDEAS_ROADMAP.md",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "risk_calculator_ideas_roadmap_future_uses_of_sentiment_analysis_output_roadmap",
+      "target": "risk_calculator_ideas_roadmap_8_data_quality",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "readme_md",
+      "target": "risk_calculator_readme_risk_calculator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "risk_calculator_readme_risk_calculator",
+      "target": "risk_calculator_readme_layout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "risk_calculator_readme_risk_calculator",
+      "target": "risk_calculator_readme_install",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "risk_calculator_readme_risk_calculator",
+      "target": "risk_calculator_readme_prerequisite_start_the_sentiment_analysis_backend",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "risk_calculator_readme_risk_calculator",
+      "target": "risk_calculator_readme_run_the_cli",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "risk_calculator_readme_risk_calculator",
+      "target": "risk_calculator_readme_run_the_api",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "risk_calculator_readme_risk_calculator",
+      "target": "risk_calculator_readme_contracts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "risk_calculator_readme_risk_calculator",
+      "target": "risk_calculator_readme_metrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "risk_calculator_readme_layout",
+      "target": "risk_calculator_readme_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "risk_calculator_readme_install",
+      "target": "risk_calculator_readme_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "risk_calculator_readme_prerequisite_start_the_sentiment_analysis_backend",
+      "target": "risk_calculator_readme_codeblock_3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "risk_calculator_readme_run_the_cli",
+      "target": "risk_calculator_readme_codeblock_4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "risk_calculator_readme_run_the_api",
+      "target": "risk_calculator_readme_codeblock_5",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": []
+}
