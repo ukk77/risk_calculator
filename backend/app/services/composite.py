@@ -111,6 +111,26 @@ def compute_indices(
     return _avg(_market_contributions(market)), _avg(_sentiment_contributions(sentiment))
 
 
+def dynamic_sentiment_weight(
+    total_articles: int,
+    confidence: float,
+    base_weight: float = 0.3,
+    min_weight: float = 0.1,
+    max_weight: float = 0.45,
+) -> float:
+    """Scale sentiment weight based on data quality.
+
+    - More articles + higher confidence → weight approaches max_weight (0.45).
+    - Sparse data (< 5 articles) or low confidence (< 0.4) → weight drops toward min_weight.
+    - Default (base) weight stays at 0.3 with moderate data.
+    """
+    article_factor = min(1.0, total_articles / 20.0)   # 0→0, 20+→1.0
+    confidence_factor = max(0.0, min(1.0, (confidence - 0.4) / 0.4))  # 0.4→0, 0.8→1.0
+    quality = (article_factor + confidence_factor) / 2.0
+    weight = min_weight + quality * (max_weight - min_weight)
+    return round(float(weight), 3)
+
+
 def composite_score(
     market_idx: float, sentiment_idx: float, w_market: float = 0.7, w_sentiment: float = 0.3
 ) -> float:

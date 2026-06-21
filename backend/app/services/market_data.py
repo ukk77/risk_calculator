@@ -9,8 +9,8 @@ from typing import Optional
 import pandas as pd
 import yfinance as yf
 
-BASE_DIR = Path(__file__).resolve().parents[4] # risk_calculator/backend/app/services/market_data.py -> trading/
-MARKET_DATA_DIR = BASE_DIR / "market_data"
+_DEFAULT_MARKET_DATA = Path(__file__).resolve().parents[4] / "market_data"
+MARKET_DATA_DIR = Path(os.environ.get("MARKET_DATA_DIR", str(_DEFAULT_MARKET_DATA)))
 
 _REGULAR_SESSION_START_MINUTES = 9 * 60 + 30   # 09:30 ET
 _REGULAR_SESSION_END_MINUTES   = 16 * 60        # 16:00 ET (exclusive)

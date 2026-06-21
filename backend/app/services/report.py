@@ -14,6 +14,7 @@ from ..models.schemas import (
     SentimentResponse,
     SentimentRiskBlock,
     SentimentRiskMetrics,
+    StressScenario,
 )
 from . import composite
 
@@ -88,6 +89,37 @@ def _build_warnings(
 
 # ---------- Assembler ----------
 
+def _build_stress_scenarios(
+    market: MarketMetrics,
+    m_idx: float,
+    s_idx: float,
+    w_sentiment: float,
+) -> List[StressScenario]:
+    """Simulate portfolio impact under standard stress shocks."""
+    scenarios = [
+        ("mild_selloff",    -0.10),
+        ("correction",      -0.20),
+        ("bear_market",     -0.40),
+        ("flash_crash",     -0.15),
+    ]
+    results = []
+    for name, shock in scenarios:
+        # Shocked VaR: approximate as existing VaR scaled by shock magnitude
+        base_var = market.var_95_hist_1d
+        new_var = round(base_var * (1 + abs(shock) * 3), 4) if base_var is not None else None
+        # Shocked composite: market index worsens proportional to shock
+        shocked_m_idx = min(100.0, m_idx * (1 + abs(shock) * 1.5))
+        w_market = 1.0 - w_sentiment
+        new_comp = round(composite.composite_score(shocked_m_idx, s_idx, w_market, w_sentiment), 2)
+        results.append(StressScenario(
+            name=name,
+            shock_pct=shock,
+            new_var_95=new_var,
+            new_composite_score=new_comp,
+        ))
+    return results
+
+
 def build_report(
     req: RiskRequest,
     market: MarketMetrics,
@@ -97,7 +129,15 @@ def build_report(
     sentiment_fetched_at: str,
 ) -> RiskResponse:
     m_idx, s_idx = composite.compute_indices(market, sentiment)
-    comp = composite.composite_score(m_idx, s_idx, req.weights.market, req.weights.sentiment)
+
+    # C2: Dynamic sentiment weight — scale by article count + confidence
+    dyn_w_sentiment = composite.dynamic_sentiment_weight(
+        total_articles=s_resp.metrics.total_articles,
+        confidence=float(s_resp.confidence),
+        base_weight=req.weights.sentiment,
+    )
+    dyn_w_market = 1.0 - dyn_w_sentiment
+    comp = composite.composite_score(m_idx, s_idx, dyn_w_market, dyn_w_sentiment)
 
     stop_pct = _suggested_stop_loss(market.atr14_pct)
     kelly = _kelly_fraction_capped(market.vol_ann_1y, market.sharpe)
@@ -110,6 +150,8 @@ def build_report(
         position_size_usd=size_usd,
     )
 
+    stress = _build_stress_scenarios(market, m_idx, s_idx, dyn_w_sentiment)
+
     return RiskResponse(
         ticker=req.ticker,
         as_of=datetime.now(timezone.utc).date().isoformat(),
@@ -118,12 +160,13 @@ def build_report(
         market_risk=MarketRiskBlock(index=round(m_idx, 2), metrics=market),
         sentiment_risk=SentimentRiskBlock(index=round(s_idx, 2), metrics=sentiment),
         recommendations=recs,
+        stress_scenarios=stress,
         warnings=_build_warnings(market, sentiment, s_resp),
         meta=Meta(
             sentiment_fetched_at=sentiment_fetched_at,
             price_data_as_of=price_data_as_of,
             benchmark=req.benchmark,
             lookback_days=req.lookback_days,
-            weights={"market": req.weights.market, "sentiment": req.weights.sentiment},
+            weights={"market": round(dyn_w_market, 3), "sentiment": round(dyn_w_sentiment, 3)},
         ),
     )

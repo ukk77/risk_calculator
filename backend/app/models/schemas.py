@@ -1,7 +1,7 @@
 """Pydantic models matching the JSON Schemas in contracts/."""
 from __future__ import annotations
 
-from typing import Dict, List, Literal, Optional
+from typing import Any, Dict, List, Literal, Optional
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -170,6 +170,14 @@ class Meta(BaseModel):
     weights: Optional[Dict[str, float]] = None
 
 
+class StressScenario(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    name: str
+    shock_pct: float           # applied price shock (e.g. -0.20 = -20%)
+    new_var_95: Optional[float] = None
+    new_composite_score: Optional[float] = None
+
+
 class RiskResponse(BaseModel):
     model_config = ConfigDict(extra="forbid")
     ticker: str
@@ -179,5 +187,43 @@ class RiskResponse(BaseModel):
     market_risk: MarketRiskBlock
     sentiment_risk: SentimentRiskBlock
     recommendations: Recommendations
+    stress_scenarios: List[StressScenario] = Field(default_factory=list)
     warnings: List[str] = Field(default_factory=list)
     meta: Meta
+
+
+# --- Portfolio risk endpoint ---
+
+class PortfolioHolding(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    ticker: str
+    weight: float = Field(..., gt=0, le=1.0)   # fraction of total portfolio
+
+
+class PortfolioRiskRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    holdings: List[PortfolioHolding]
+    benchmark: str = "SPY"
+    lookback_days: int = Field(252, ge=60, le=3650)
+    sentiment_api_url: Optional[str] = None
+
+
+class PortfolioTickerRisk(BaseModel):
+    model_config = ConfigDict(extra="allow")
+    ticker: str
+    weight: float
+    composite_risk_score: float
+    risk_bucket: str
+    weighted_contribution: float       # weight * composite_risk_score
+    correlation_to_portfolio: Optional[float] = None
+
+
+class PortfolioRiskResponse(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    as_of: str
+    portfolio_composite_score: float
+    portfolio_risk_bucket: str
+    diversification_ratio: Optional[float] = None   # avg pairwise 1-corr
+    concentration_hhi: float                        # Herfindahl–Hirschman index of weights
+    tickers: List[PortfolioTickerRisk]
+    warnings: List[str] = Field(default_factory=list)

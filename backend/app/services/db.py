@@ -14,12 +14,14 @@ One row per (ticker, captured_at) storing:
 from __future__ import annotations
 
 import json
+import os
 import sqlite3
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-DB_PATH = Path(__file__).resolve().parents[2] / "risk_history.db"
+_DEFAULT_DB = Path(__file__).resolve().parents[2] / "risk_history.db"
+DB_PATH = Path(os.environ.get("RISK_DB_PATH", str(_DEFAULT_DB)))
 
 
 # ---------- Column definitions (keep in sync with schemas.MarketMetrics / SentimentRiskMetrics) ----------
