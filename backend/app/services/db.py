@@ -108,9 +108,14 @@ def init_db() -> None:
             "ON risk_snapshots(ticker, captured_at)"
         )
         conn.commit()
+        try:
+            conn.execute("ALTER TABLE risk_snapshots ADD COLUMN session TEXT")
+            conn.commit()
+        except Exception:
+            pass  # column already exists
 
 
-def save_snapshot(report: Dict[str, Any]) -> None:
+def save_snapshot(report: Dict[str, Any], session: str = "intraday") -> None:
     """Persist one RiskResponse (as a dict) to the DB.
 
     Expects the dict form of the RiskResponse pydantic model.
@@ -149,6 +154,7 @@ def save_snapshot(report: Dict[str, Any]) -> None:
         "lookback_days":        meta.get("lookback_days"),
         "weight_market":        weights.get("market"),
         "weight_sentiment":     weights.get("sentiment"),
+        "session":              session,
     }
     for c in MARKET_COLS:
         row[c] = market_metrics.get(c)

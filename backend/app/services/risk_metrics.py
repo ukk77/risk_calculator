@@ -167,6 +167,39 @@ def gap_risk_frequency(ohlc: pd.DataFrame, sigma_mult: float = 2.0) -> Optional[
     return float(big / len(gap))
 
 
+def premarket_gap_pct(ticker: str) -> Optional[float]:
+    """Signed pre-market gap for today: (first pre-market open - prior regular close) / prior close.
+
+    Uses fetch_ohlcv_extended to access extended-hours hourly bars. Returns None when
+    there are no pre-market bars for the current trading day or the cache is unavailable.
+    """
+    try:
+        from .market_data import fetch_ohlcv_extended
+        df = fetch_ohlcv_extended(ticker, lookback_days=5)
+    except Exception:
+        return None
+
+    if df.empty:
+        return None
+
+    today = pd.Timestamp.now().normalize()
+
+    regular_closes = df[~df["is_extended"]]["Close"].dropna()
+    premarket_bars = df[
+        df["is_extended"] & (pd.to_datetime(df.index).normalize() == today)
+    ]
+
+    if premarket_bars.empty or regular_closes.empty:
+        return None
+
+    prior_close = float(regular_closes.iloc[-1])
+    if prior_close == 0:
+        return None
+
+    first_pm_open = float(premarket_bars["Open"].iloc[0])
+    return float((first_pm_open - prior_close) / prior_close)
+
+
 def liquidity_score(ohlc: pd.DataFrame) -> Optional[float]:
     """0-100 score: higher = more liquid. Based on avg dollar volume and zero-volume share."""
     if ohlc.empty:
@@ -199,6 +232,7 @@ def compute_market_metrics(
     ohlc: pd.DataFrame,
     bench_ohlc: pd.DataFrame,
     rf_annual: float,
+    ticker: Optional[str] = None,
 ) -> MarketMetrics:
     close = ohlc["Close"]
     rets = log_returns(close)
@@ -225,6 +259,7 @@ def compute_market_metrics(
         excess_kurtosis=excess_kurtosis(rets),
         atr14_pct=atr14_pct(ohlc),
         gap_risk_freq=gap_risk_frequency(ohlc),
+        premarket_gap_pct=premarket_gap_pct(ticker) if ticker else None,
         liquidity_score=liquidity_score(ohlc),
         range_52w_position=range_52w_position(close),
     )

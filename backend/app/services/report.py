@@ -71,6 +71,12 @@ def _build_warnings(
         w.append(f"Low news volume ({s_resp.metrics.total_articles} articles); sentiment metrics may be unreliable.")
     if sentiment.confidence is not None and sentiment.confidence < 0.5:
         w.append(f"Low sentiment confidence ({sentiment.confidence:.2f}).")
+    if market.premarket_gap_pct is not None and abs(market.premarket_gap_pct) >= 0.02:
+        direction = "up" if market.premarket_gap_pct > 0 else "down"
+        w.append(
+            f"Significant pre-market gap {direction} ({market.premarket_gap_pct:+.1%}); "
+            "elevated open-of-day volatility expected."
+        )
     if market.max_drawdown is not None and market.max_drawdown < -0.4:
         w.append(f"Severe historical drawdown ({market.max_drawdown:.0%}).")
     if market.excess_kurtosis is not None and market.excess_kurtosis > 5:

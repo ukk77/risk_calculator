@@ -93,7 +93,7 @@
       }
     },
     "correlation": {
-      "type": "object",
+      "type": ["object", "null"],
       "description": "Price–sentiment correlation metrics (Pearson r, lead/lag, divergence).",
       "additionalProperties": true,
       "properties": {

@@ -122,6 +122,7 @@ class MarketMetrics(BaseModel):
     excess_kurtosis: Optional[float] = None
     atr14_pct: Optional[float] = None
     gap_risk_freq: Optional[float] = None
+    premarket_gap_pct: Optional[float] = None
     liquidity_score: Optional[float] = None
     range_52w_position: Optional[float] = None
 

@@ -67,7 +67,7 @@ def risk(req: RiskRequest) -> RiskResponse:
     price_as_of = ohlc.index[-1].date().isoformat()
 
     # 3. Metrics.
-    m_metrics = risk_metrics.compute_market_metrics(ohlc, bench, rf_annual=rf)
+    m_metrics = risk_metrics.compute_market_metrics(ohlc, bench, rf_annual=rf, ticker=req.ticker)
     s_metrics = sentiment_risk.compute_sentiment_metrics(s_resp)
 
     # 4. Report.
