@@ -1,6 +1,12 @@
 """FastAPI entry point for risk_calculator."""
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+_TRADING_ROOT = Path(__file__).resolve().parents[3]
+if str(_TRADING_ROOT) not in sys.path:
+    sys.path.insert(0, str(_TRADING_ROOT))
+
 from datetime import datetime, timezone
 
 from fastapi import FastAPI, HTTPException
@@ -10,7 +16,8 @@ from .models.schemas import (
     PortfolioRiskRequest, PortfolioRiskResponse, PortfolioTickerRisk,
 )
 from .services import db as risk_db
-from .services import market_data, risk_metrics, sentiment_client, sentiment_risk
+from trading_core import market_data
+from .services import risk_metrics, sentiment_client, sentiment_risk
 from .services import composite as composite_svc
 from .services.report import build_report
 

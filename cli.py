@@ -18,11 +18,11 @@ from rich.table import Table
 
 from backend.app.models.schemas import RiskRequest, Weights
 from backend.app.services import (
-    market_data,
     risk_metrics,
     sentiment_client,
     sentiment_risk,
 )
+from trading_core import market_data
 from backend.app.services.report import build_report
 
 console = Console()
